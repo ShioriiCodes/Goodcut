@@ -198,7 +198,36 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// splash screen functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const splash = document.getElementById("splash-screen");
+      const logo = document.getElementById("splash-logo");
 
+      // Smoothly transition background and logo
+      setTimeout(() => {
+        splash.style.transition = "background 0.7s cubic-bezier(0.4,0,0.2,1)";
+        splash.classList.replace("bg-black", "bg-white");
+        logo.style.transition = "opacity 0.5s";
+        logo.style.opacity = 0;
+        setTimeout(() => {
+          logo.src = "/Assets/Logo/logob.png";
+          logo.onload = () => {
+            logo.style.opacity = 1;
+          };
+        }, 350);
+      }, 1800);
+
+      // Fade out splash
+      setTimeout(() => {
+        splash.style.transition += ", opacity 0.7s cubic-bezier(0.4,0,0.2,1)";
+        splash.classList.add("opacity-0");
+      }, 3000);
+
+      // Remove from DOM
+      setTimeout(() => {
+        splash.remove();
+      }, 3700);
+    });
 
 
 
