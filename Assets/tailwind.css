@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  .item {
+    @apply relative bg-cover bg-center p-6 text-white text-[32px] font-bold font-built_titling aspect-square;
+  }
+  .item-label {
+    @apply absolute bottom-[122px] left-10 underline;
+  }
+
+    .fade-in-start {
+    @apply opacity-0;
+  }

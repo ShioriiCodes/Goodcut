@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GoodCut Studio | About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Built+Titling&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/node_modules/tailwindcss/tailwind.js"></script>
+    <link rel="stylesheet" href="/Assets/css/font.css" />
+
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/png" href="/Assets/Logo/logow.png" sizes="16x16" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Logo/logow.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Assets/Logo/logow.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Assets/Logo/logow.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Assets/Logo/logow.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Assets/Logo/logow.png">
+</head>
+<body>
+
+    <!-- Header + Hero Section Wrapper -->
+    <section class="h-[90vh] bg-[#f2f2f2] ">
+      <!-- Header -->
+      <header class="text-black px-6 md:px-13 pt-10 flex justify-between items-center uppercase tracking-widest mx-auto">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 ml-2">
+          <a href="/index.html">
+            <img src="/Assets/Logo/logob.png" alt="GoodCut Studio Logo" class="h-auto w-[130px]" />
+          </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center leading-none px-6 md:px-16 py-4 gap-16">
+          <a href="/index.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Home</a>
+          <a href="/about.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">About</a>
+          <a href="/work.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Works</a>
+          <a href="/service.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Services</a>
+          <!-- Button (Let's Cut) -->
+          <button onclick="openModal()" class="flex items-center gap-2 border-2 border-black px-7 py-1 rounded-full hover:border-[#b4e205] hover:bg-[#b4e205] transition leading-none group font-built_titling font-semibold text-2xl tracking-wider">
+            <span class="px-2 mx-auto">Let’s Cut</span>
+            <img src="/Assets/Image/arrow1.png" alt="Arrow" class="h-[36px] w-auto group-hover:hidden mr-[-23px]"/>
+            <img src="/Assets/Image/arrow1.png" alt="Arrow Hover" class="h-[36px] w-auto hidden group-hover:inline mr-[-23px]"/>
+          </button>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <div class="flex flex-wrap gap-2 items-center justify-center px-5 py-[30px] max-w-[1600px] mx-auto">
+        <!-- Left Image -->
+        <div class="w-full max-w-[720px]">
+          <img src="/Assets/Image/Esoj_Luna.png" alt="Esoj Luna" class="w-[800px] h-auto max-w-[100%] rounded-[4px] mb-[-105px] fade-in-start" />
+        </div>
+        <!-- Right Quote -->
+        <div class="max-w-[800px] flex-1 mt-[75px] fade-in-start">
+          <div class="ml-[-15px] flex-1">
+            <span class="text-[190px] text-[#999999] block font-workSans leading-none mb-[-5rem]">“</span>
+            <h2 class="text-[48px] text-black leading-[1.1] pb-[60px] font-workSans font-semibold">
+              We turn ideas into stunning designs. With a passion for creativity and innovation, we craft visuals that inspire, engage, and leave a lasting impact.
+            </h2>
+            <p class="text-[#999] text-[24px] font-workSans py-[20px] leading-[1.1]">
+              <strong class="text-[#999999] font-workSans font-bold text-[24px]">Esoj Luna</strong><br />
+              <span class="font-normal font-workSans">Founder CEO @ GoodCut Studio</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center hidden fade-in-start">
+        <div class="relative max-w-[1400px] w-full mx-auto border border-white/40 text-white bg-black/40 px-7 py-[100px]">
+          
+          <!-- Close Button -->
+          <button class="absolute top-0 left-3 text-white text-5xl hover:text-[#b4e205]" onclick="closeModal()">×</button>
+          
+          <!-- Header: Contact Info & Tagline -->
+          <div class="flex justify-between items-start flex-wrap mb-12 pl-12 mt-[-50px]">
+            <div>
+              <h2 class="text-[#b4e205] text-[50px] font-built_titling font-extrabold mb-1">CONTACT US</h2>
+              <p class="text-2xl font-workSans">contact@goodcut.com</p>
+            </div>
+            <div class="text-right">
+              <h3 class="text-4xl font-workSans">Let’s create together.</h3>
+              <p class="text-2xl text-white/70 font-workSans font-normal">Let us know how we can help.</p>
+            </div>
+          </div>
+
+          <!-- Centered Form -->
+          <div class="flex justify-center ">
+            <form class="w-full max-w-[700px] space-y-5 text-white text-left">
+              <!-- Name -->
+              <div>
+                <label class="block text-[25px] font-built_titling font-normal mb-1 uppercase">Name*</label>
+                <input type="text" placeholder="Your Name" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]" />
+              </div>
+              <!-- Email -->
+              <div>
+                <label class="block text-[25px] font-built_titling font-normal mb-1 uppercase">Email*</label>
+                <input type="email" placeholder="Your email address" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]" />
+              </div>
+              <!-- Message -->
+              <div>
+                <label class="block text-[25px] font-built_titling font-normal mb-1 uppercase">Your Message*</label>
+                <textarea rows="4" placeholder="Your message" class="w-full px-4 py-2 pb-16 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]"></textarea>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="text-2xl mt-10 flex items-center gap-4 px-7 py-4 bg-white text-black uppercase font-built_titling font-semibold rounded-full hover:bg-[#b4e205] hover:text-black transition duration-300 leading-none group tracking-wider shadow-none border-none">
+                <span class="px-2 mx-auto">Send Message</span>
+                <img src="/Assets/Image/arrow1.png" alt="Arrow" class="h-12 w-auto group-hover:hidden mr-[-20px]" />
+                <img src="/Assets/Image/arrow1.png" alt="Arrow Hover" class="h-12 w-auto hidden group-hover:inline mr-[-20px]" />
+              </button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- Gif Banner Section -->
+    <section class="relative w-full bg-black items-center">
+      <!-- Banner Image -->
+      <img src="Assets/Image/blue.png" alt="Sample Animation Image" class="w-full object-cover fade-in-start" />
+
+      <!-- Note Overlay -->
+      <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-black/70 text-white p-3 md:p-4 rounded-md text-xs md:text-sm font-sans leading-snug">
+        TEXT NOT INCLUDED / FOR INFO PURPOSES ONLY<br>
+        <strong class="font-bold text-lime-300">GIF / ANIMATION SECTION</strong>
+      </div> 
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-black text-white py-[100px]">
+      <div class="max-w-[1400px] w-full mx-auto text-left fade-in-start">
+        <h2 class="text-[#B4E205] font-built_titling font-bold text-5xl mb-[25px] pt-11">
+          TEAM
+        </h2>
+        <p class="text-[35px] font-workSans font-semibold leading-[1.3]">
+          Our team of 
+          <strong class="text-[#f4e8c3] font-bold">
+            four multi-disciplinary digital specialists
+          </strong> 
+          brings together diverse expertise and passion for creative endeavors.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Team Section -->
+    <section class="bg-white text-black py-[80px] px-6">
+      <div class="max-w-[1400px] mx-auto ">
+
+        <h3 class="text-4xl font-built_titling font-bold not-italic fade-in-start">
+          CORE <em class="italic font-bold">TEAM</em>
+        </h3>
+        <div class="w-full max-w-[1400px] border-t border-[#333] mx-auto pb-7 fade-in-start"></div>
+
+        <div class="flex flex-wrap justify-center gap-y-16 gap-x-10 max-w-[1400px] mx-auto fade-in-start">
+          <!-- Member 1 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <img src="/Assets/Image/Joseph.png" alt="Joseph Luna" class="w-[80px] h-[80px] object-cover rounded-full mb-4">
+            <strong class="block text-[20px] text-black font-workSans font-black leading-tight">Joseph Luna</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans font-normal">(Lead Design / Layout)</small>
+            <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Joseph, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+            </p>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <img src="/Assets/Image/anthony.png" alt="Anthony Aves" class="w-[80px] h-[80px] object-cover rounded-full mb-4">
+            <strong class="block text-[20px] font-workSans font-extrabold">Anthony Aves</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+            <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Anthony brings bold creativity in layout and branding, creating striking visual identities.
+            </p>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <img src="/Assets/Image/Gerby.png" alt="Gerby Kesseneth V. Galbizo" class="w-[80px] h-[80px] object-cover rounded-full mb-4">
+            <strong class="block text-[20px] font-workSans font-bold">Gerby Kesseneth V. Galbizo</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Illustrator / Concept Artist)</small>
+            <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Gerby brings his artistic talents to the team as our illustrator and concept artist. His vibrant designs and creative concepts breathe life into our projects.
+            </p>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <img src="/Assets/Image/Reymund.png" alt="Raymund P. Suarez" class="w-[80px] h-[80px] object-cover rounded-full mb-4">
+            <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+            <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Imong Suarez, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Team -->
+    <section class="bg-white text-black py-[100px] px-6">
+      <div class="max-w-[1400px] mx-auto">
+
+        <h3 class="text-4xl font-built_titling font-bold not-italic fade-in-start">
+          Support <em class="italic font-bold">TEAM</em>
+        </h3>
+        <div class="w-full max-w-[1400px] border-t border-[#333] mx-auto pb-7 fade-in-start"></div>
+
+        <div class="flex flex-wrap justify-center gap-y-16 gap-x-10 max-w-[1400px] mx-auto fade-in-start">
+          <!-- Member 1 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <!-- <img src="/Assets/Image/Joseph.png" alt="Joseph Luna" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+            <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+            <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Joseph, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+            </p> -->
+          </div>
+
+          <!-- Member 2 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <!-- <img src="/Assets/Image/anthony.png" alt="Anthony Aves" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+            <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+            <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Anthony brings bold creativity in layout and branding, creating striking visual identities.
+            </p> -->
+          </div>
+
+          <!-- Member 3 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <!-- <img src="/Assets/Image/Gerby.png" alt="Gerby Kesseneth V. Galbizo" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+            <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+            <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Gerby brings his artistic talents to the team as our illustrator and concept artist. His vibrant designs and creative concepts breathe life into our projects.
+            </p> -->
+          </div>
+
+          <!-- Member 4 -->
+          <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+            <!-- <img src="/Assets/Image/Reymund.png" alt="Raymund P. Suarez" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+            <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+            <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+            <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+              Imong Suarez, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+            </p> -->
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-y-16 gap-x-10 max-w-[1400px] mx-auto py-4 fade-in-start">
+          <!-- Member 5 -->
+            <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+              <!-- <img src="/Assets/Image/Reymund.png" alt="Raymund P. Suarez" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+              <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+              <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+              <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+                Imong Suarez, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+              </p> -->
+            </div>
+
+            <!-- Member 6 -->
+            <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+              <!-- <img src="/Assets/Image/Reymund.png" alt="Raymund P. Suarez" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+              <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+              <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+              <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+                Imong Suarez, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+              </p> -->
+            </div>
+
+            <!-- Member 7 -->
+            <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+              <!-- <img src="/Assets/Image/Reymund.png" alt="Raymund P. Suarez" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+              <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+              <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+              <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+                Imong Suarez, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+              </p> -->
+            </div>
+
+            <!-- Member 8 -->
+            <div class="w-full sm:w-[48%] md:w-[320px] text-left">
+              <!-- <img src="/Assets/Image/Reymund.png" alt="Raymund P. Suarez" class="w-[80px] h-[80px] object-cover rounded-full mb-4"> -->
+              <strong class="block text-[20px] font-workSans font-bold">Raymund P. Suarez</strong>
+              <small class="block text-[18px] text-[#333] mb-2 font-workSans">(Lead Design / Layout)</small>
+              <!-- <p class="text-[20px] text-[#333] leading-[1.2] font-workSans">
+                Imong Suarez, our lead designer, specializes in layout and branding, infusing our projects with visual flair and coherence.
+              </p> -->
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-[#E9EAEC] text-center font-built_titling py-[50px]">
+      <div class="max-w-[1400px] mx-auto px-3 py-[60px] fade-in flex flex-col gap-6 fade-in-start">
+        <!-- Button 1 -->
+        <button 
+          onclick="location.href='/work.html'"
+          class="w-full max-w-full bg-[#b4e205] hover:bg-white transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-semibold uppercase cursor-pointer border-none"
+        >
+          <span class="text-[50px] text-black">SEE ALL OUR WORKS</span>
+          <img 
+            src="/Assets/Image/arrow1.png" 
+            alt="arrow" 
+            class="h-[70px] w-[70px] rounded-full object-contain -mr-[35px]"
+          />
+        </button>
+
+        <!-- Button 2 -->
+        <button 
+          onclick="location.href='#hero'"
+          class="w-full max-w-full border-2 border-black hover:bg-[#b4e205] hover:border-[#b4e205] transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-semibold uppercase cursor-pointer"
+        >
+          <span class="text-[50px] text-black">LET'S CUT</span>
+          <img 
+            src="/Assets/Image/arrow1.png" 
+            alt="arrow" 
+            class="h-[70px] w-[70px] rounded-full object-contain -mr-[35px]"
+          />
+        </button>
+      </div>
+      <div
+        onclick="scrollToTop()"
+        class="mx-auto mt-12 mb-[-50px] text-[#a1a1a1] font-workSans w-auto px-5 h-[50px] rounded-full flex items-center justify-center text-[20px] transition-colors duration-300 cursor-pointer font-built_titling font-bold gap-3 fade-in-start"
+        style="min-width: 140px; max-width: 320px;"
+      >
+        <span class="text-[20px] font-built_titling leading-none">↑</span>
+        <span class="text-[20px] tracking-wide mt-[6px]">Back to Top</span>
+      </div>
+    </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-6">
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto mb-[-10px]">
+      <div class="flex items-center pt-2">
+        <img src="/Assets/Logo/GOODCUT_1.png" alt="GoodCut Studio Logo" class="h-[30px] w-auto" />
+        <span class="text-[29px] font-semibold font-built_titling ml-2">GOODCUT STUDIO</span>
+      </div>
+      <div class="flex-grow text-right text-[20px] font-workSans font-normal text-white/70">
+        Quezon | Puerto Princesa, Palawan Philippines
+      </div>
+    </div>
+
+    <!-- Border Line -->
+    <div class="w-full max-w-[1400px] border-t border-[#333] mt-2 mx-auto"></div>
+
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto">
+      <div class="py-2 text-[20px] text-white/80 font-workSans font-semibold">&copy;2025</div>
+      <div>
+        <a href="#" class="text-white/50 text-[18px] uppercase font-workSans font-normal hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+    <script src="/Assets/script/script.js"></script>
+      
+</body>
+</html>
