@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1_copy_2" data-name="Layer 1 copy 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.92 51">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 3px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #b4e205;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-linecap: round;
+      }
+
+      .cls-4 {
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Group_13" data-name="Group 13">
+      <g id="Group_12" data-name="Group 12">
+        <path id="Path_10" data-name="Path 10" class="cls-2" d="m25.15,13.67l11.26,12.04-11.26,11.62"/>
+        <path id="Path_11" data-name="Path 11" class="cls-3" d="m35.72,25.5H14.59"/>
+      </g>
+      <g id="Ellipse_1" data-name="Ellipse 1">
+        <circle class="cls-4" cx="25.5" cy="25.5" r="25"/>
+        <circle class="cls-1" cx="25.5" cy="25.5" r="23.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

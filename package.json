@@ -1,0 +1,16 @@
+{
+  "name": "goodcutwebsite-ver04",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./style.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+  "tailwindcss": "^4.1.10"
+  }
+}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GoodCut Studio | Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Built+Titling&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/node_modules/tailwindcss/tailwind.config.js"></script>
+    <link rel="stylesheet" href="/Assets/css/font.css" />
+    <link href="/Assets/tailwind.css" rel="stylesheet">
+
+      <!-- Favicon Icon -->
+      <link rel="icon" type="image/png" href="/Assets/Logo/logow.png" sizes="16x16" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="512x512" href="/Assets/Logo/logow.png">
+</head>
+<body>
+
+    <!-- Fullscreen Wrapper -->
+    <section class="h-screen flex flex-col bg-black text-white font-workSans">
+      <!-- Header -->
+      <header class="bg-black text-white px-6 md:px-[40px] py-10 mr-[-40px] flex justify-between items-center uppercase tracking-widest">
+      <!-- Logo -->
+      <div class="flex items-center gap-2 ml-2">
+        <a href="/index.html">
+          <img src="/Assets/Logo/logow.png" alt="GoodCut Studio Logo" class="h-auto w-[130px]" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center leading-none px-6 md:px-16 py-4 gap-16">
+        <a href="/index2.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Home</a>
+        <a href="/about.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">About</a>
+        <a href="/work.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Works</a>
+        <a href="/service.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Services</a>
+
+        <!-- Button (Let's Cut) -->
+        <button onclick="openModal()" class="flex items-center gap-2 border-2 border-white px-7 py-1 rounded-full hover:border-[#b4e205] hover:text-[#b4e205] transition leading-none group font-built_titling font-semibold text-2xl tracking-wider">
+          <span class="px-2 mx-auto">Let’s Cut</span>
+          <img src="/Assets/Image/arrow3.png" alt="Arrow" class="h-[36px] w-auto group-hover:hidden mr-[-23px]"/>
+          <img src="/Assets/Image/arrow2.png" alt="Arrow Hover" class="h-[36px] w-auto hidden group-hover:inline mr-[-23px]"/>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center hidden fade-in-start">
+      <div class="relative max-w-[1400px] w-full mx-auto border border-white/40 text-white bg-black/40 px-7 py-[130px]">
+        
+        <!-- Close Button -->
+        <button class="absolute top-0 left-3 text-white text-5xl hover:text-[#b4e205]" onclick="closeModal()">×</button>
+        
+        <!-- Header: Contact Info & Tagline -->
+        <div class="flex justify-between items-start flex-wrap mb-12 pl-12 mt-[-70px]">
+          <div>
+            <h2 class="text-[#b4e205] text-[50px] font-built_titling font-extrabold mb-1">CONTACT US</h2>
+            <p class="text-2xl font-workSans">contact@goodcut.com</p>
+          </div>
+          <div class="text-right">
+            <h3 class="text-4xl font-workSans">Let’s create together.</h3>
+            <p class="text-2xl text-white/70 font-workSans font-normal">Let us know how we can help.</p>
+          </div>
+        </div>
+
+          <!-- Centered Form -->
+          <div class="flex justify-center">
+            <form class="w-full max-w-[700px] space-y-5 text-white text-left">
+              <!-- Name -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Name*</label>
+                <input type="text" placeholder="Your Name" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px] font-bebas_neue" />
+              </div>
+              <!-- Email -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Email*</label>
+                <input type="email" placeholder="Your email address" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]" />
+              </div>
+              <!-- Message -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Your Message*</label>
+                <textarea rows="4" placeholder="Your message" class="w-full px-4 py-2 pb-16 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]"></textarea>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="text-2xl mt-10 flex items-center gap-4 px-7 py-4 bg-white text-black uppercase font-Bebas_Neue font-normal rounded-full hover:bg-[#b4e205] hover:text-black transition duration-300 leading-none group tracking-wider shadow-none border-none">
+                <span class="px-2 mx-auto">Send Message</span>
+                <img src="/Assets/Image/arrow1.png" alt="Arrow" class="h-12 w-auto group-hover:hidden mr-[-20px]" />
+                <img src="/Assets/Image/arrow1.png" alt="Arrow Hover" class="h-12 w-auto hidden group-hover:inline mr-[-20px]" />
+              </button>
+            </form>
+          </div>
+      </div>
+    </div>
+
+    <!-- Hero Section with Black Background -->
+    <div class="w-full mx-auto px-4 bg-black pb-[180px]">
+      <!-- Services Section -->
+      <div class="max-w-[1400px] mx-auto text-left mb-8 fade-in-start">
+        <h2 class="text-[54px] font-built_titling font-bold text-[#d6ff00] mb-6">Services</h2>
+        <hr class="my-2 border-t border-[#d6ff00] mx-auto">
+        <p class="text-[36px] text-[#f2f2f2] my-[50px] font-workSans font-semibold">
+          Here’s a closer look at what our services include.
+        </p>
+        <hr class="my-4 border-t border-[#707070] mx-auto">
+      </div>
+
+      <!-- NFT Collection Section -->
+      <div class="max-w-[1400px] mx-auto flex flex-wrap items-start mx-auto text-left justify-between w-full">
+        <!-- Left Side (NFT Collection) -->
+        <div class="w-full sm:w-[360px] text-left text-4xl font-built_titling font-bold text-[#f2f2f2] fade-in-start">
+          NFT Collection
+        </div>
+
+        <!-- Center Description -->
+        <div class="w-full sm:w-[675px] text-left font-workSans fade-in-start">
+          <p class="text-[18px] text-[#f2f2f2] font-normal">
+            At Goodcut Studio, we specialize in crafting unique and original NFT collections, each accompanied by a compelling narrative that resonates within the Web3 space. Our team not only creates and develops high-quality NFT assets but also offers support to individuals, businesses, and investors who want to build their own NFT brands from scratch. We ensure that both our clients and ourselves are completely satisfied with every step of the process, from concept to execution.
+          </p>
+          <br>
+          <h3 class="font-bold text-[18px] text-[#f2f2f2] mb-4">Our Process:</h3>
+          <ul class="text-[#f2f2f2] text-[18px] font-workSans">
+            <li>
+              <span class="font-bold">Concept & Ideation</span>
+              <span class="font-normal"> – <br>Developing unique NFT ideas and themes.</span>
+            </li>
+            <li>
+              <span class="font-bold">Asset Creation</span>
+              <span class="font-normal"> – <br>Designing high-quality, original NFT illustrations.</span>
+            </li>
+            <li>
+              <span class="font-bold">Metadata & Smart Contracts</span>
+              <span class="font-normal"> – <br>Ensuring proper blockchain integration.</span>
+            </li>
+            <li>
+              <span class="font-bold">Branding & Marketing</span>
+              <span class="font-normal"> – <br>Creating cohesive branding and promotional assets.</span>
+            </li>
+            <li>
+              <span class="font-bold">Launch & Community Engagement</span>
+              <span class="font-normal"> – <br>Assisting with drops, sales, and community building.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side (Assets) -->
+        <div class="w-full sm:w-[330px] pl-5 text-left font-normal font-workSans text-[18px] text-[#d6ff00] fade-in-start">
+          <p class="mb-[3px]">Asset Illustration</p>
+          <p class="mb-[3px]">Narrative Stories</p>
+          <p class="mb-[3px]">Web Design and Branding</p>
+          <p class="mb-[3px]">Generate Asset</p>
+          <p class="mb-[3px]">Social Media Marketing Collaterals</p>
+          <p class="mb-[3px]">Metadata</p>
+        </div>
+      </div>
+      
+      <hr class="my-10 border-t border-[#707070] max-w-[1400px] mx-auto">
+
+      <!-- Concept art & Visual Development Section-->
+      <div class="max-w-[1400px] mx-auto flex flex-wrap items-start justify-between w-full">
+        <!-- Left Side (Web Design) -->
+        <div class="w-full sm:w-[360px] text-left text-4xl font-built_titling font-bold text-[#f2f2f2] fade-in-start">
+          Concept art & <br>Visual Development
+        </div>
+
+        <!-- Center Description -->
+        <div class="w-full sm:w-[675px] text-left font-workSans fade-in-start">
+          <p class="text-[18px] text-[#f2f2f2] font-normal">
+            We provide comprehensive concept art and visual development services for both animated films and the gaming industry. Our offerings include character design, character poses, scene design, storyboarding, environment backgrounds, world-building, and branding. At Goodcut Studio, we create original intellectual properties (IPs) for games and animated films, and we also collaborate with clients to transform their visions into reality. We ensure that the final outcome not only meets but exceeds expectations, ensuring satisfaction for both us and our clients. 
+          </p>
+          <br>
+          <h3 class="font-bold text-[18px] text-[#f2f2f2] mb-4">Our Process:</h3>
+          <ul class="text-[#f2f2f2] text-[18px] font-workSans">
+            <li>
+              <span class="font-bold">Concept Exploration</span>
+              <span class="font-normal"> – <br>Researching and brainstorming unique visual styles.</span>
+            </li>
+            <li>
+              <span class="font-bold">Sketching & Refinement</span>
+              <span class="font-normal"> – <br>Developing initial sketches and refining concepts.</span>
+            </li>
+            <li>
+              <span class="font-bold">Final Design Execution</span>
+              <span class="font-normal"> – <br>Creating polished, detailed assets.</span>
+            </li>
+            <li>
+              <span class="font-bold">Integration & Presentation</span>
+              <span class="font-normal"> – <br>Preparing assets for game, animation, or film production.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side (Web Design Features) -->
+        <div class="w-full sm:w-[330px] pl-5 text-left font-normal font-workSans text-[18px] text-[#d6ff00] fade-in-start">
+          <p class="mb-[3px]">World Building</p>
+          <p class="mb-[3px]">Character Design Concepts</p>
+          <p class="mb-[3px]">Storyboarding</p>
+          <p class="mb-[3px]">Background Environment</p>
+          <p class="mb-[3px]">Concepts</p>
+          <p class="mb-[3px]">Props Asset</p>
+          <p class="mb-[3px]">Poster Concepts</p>
+          <p class="mb-[3px]">Layout Scene</p>
+        </div>
+      </div>
+
+      <hr class="my-10 border-t border-[#707070] max-w-[1400px] mx-auto">
+
+      <!-- Graphic Illustration Section-->
+      <div class="max-w-[1400px] mx-auto flex flex-wrap items-start justify-between w-full">
+        <!-- Left Side (Web Design) -->
+        <div class="w-full sm:w-[360px] text-left text-4xl font-built_titling font-bold text-[#f2f2f2] fade-in-start">
+          Graphic Illustration
+        </div>
+
+        <!-- Center Description -->
+        <div class="w-full sm:w-[675px] text-left font-workSans fade-in-start">
+          <p class="text-[18px] text-[#f2f2f2] font-normal">
+            Our studio excels in creating high-quality graphic illustrations, with a wide range of offerings including character designs, illustrations for both children and adults, splash art, props, backgrounds, and posters. Whether it’s a whimsical illustration or something more sophisticated, we cater to various needs and ensure that each project is completed to the highest standard. Our priority is to deliver results that make our clients happy and satisfied with the finished artwork. 
+          </p>
+          <br>
+          <h3 class="font-bold text-[18px] text-[#f2f2f2] mb-4">Our Process:</h3>
+          <ul class="text-[#f2f2f2] text-[18px] font-workSans">
+            <li>
+              <span class="font-bold">Idea Generation</span>
+              <span class="font-normal"> – <br>Understanding client needs and defining the illustration style.</span>
+            </li>
+            <li>
+              <span class="font-bold">Sketching & Composition</span>
+              <span class="font-normal"> – <br>Creating rough drafts and refining layout.</span>
+            </li>
+            <li>
+              <span class="font-bold">Final Design Execution</span>
+              <span class="font-normal"> – <br>Developing high-quality digital or traditional illustrations.</span>
+            </li>
+            <li>
+              <span class="font-bold">Client Review & Adjustments</span>
+              <span class="font-normal"> – <br>Ensuring satisfaction before final delivery.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side (Web Design Features) -->
+        <div class="w-full sm:w-[330px] pl-5 text-left font-normal font-workSans text-[18px] text-[#d6ff00] fade-in-start">
+          <p class="mb-[3px]">Splash Art/p>
+          <p class="mb-[3px]">Kids’ Book Illustration</p>
+          <p class="mb-[3px]">Packaging Illustration</p>
+          <p class="mb-[3px]">Poster Illustration</p>
+          <p class="mb-[3px]">Merchandise Illustration</p>
+          <p class="mb-[3px]">Background Illustration</p>
+          <p class="mb-[3px]">Character Illustration</p>
+        </div>
+      </div>
+
+        <hr class="my-10 border-t border-[#707070] max-w-[1400px] mx-auto">
+
+      <!-- Logo Design Section-->
+      <div class="max-w-[1400px] mx-auto flex flex-wrap items-start justify-between w-full">
+        <!-- Left Side (Web Design) -->
+        <div class="w-full sm:w-[360px] text-left text-4xl font-built_titling font-bold text-[#f2f2f2] fade-in-start">
+          Logo Design
+        </div>
+
+        <!-- Center Description -->
+        <div class="w-full sm:w-[675px] text-left font-workSans fade-in-start">
+          <p class="text-[18px] text-[#f2f2f2] font-normal">
+            We create unique and memorable logos from scratch, tailored to fit any need—whether personal, for a startup, a small business, a large corporation, or an investor. Our team designs logos in various styles, from playful and fun to professional and serious, ensuring that it aligns perfectly with your brand’s personality. We focus on delivering a logo that resonates with your audience and leaves a lasting impression. Our goal is to ensure that both our clients and ourselves are satisfied with the creative process and the final logo design.
+          </p>
+          <br>
+          <h3 class="font-bold text-[18px] text-[#f2f2f2] mb-4">Our Process:</h3>
+          <ul class="text-[#f2f2f2] text-[18px] font-workSans">
+            <li>
+              <span class="font-bold">Brand Discovery</span>
+              <span class="font-normal"> – <br>Understanding your vision and target audience.</span>
+            </li>
+            <li>
+              <span class="font-bold">Sketching & Conceptualizing</span>
+              <span class="font-normal"> – <br>Developing multiple logo ideas.</span>
+            </li>
+            <li>
+              <span class="font-bold">Refinement & Finalization</span>
+              <span class="font-normal"> – <br>Perfecting the chosen concept.</span>
+            </li>
+            <li>
+              <span class="font-bold">Delivery & Branding Guide</span>
+              <span class="font-normal"> – <br>Providing final assets and usage guidelines.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side (Web Design Features) -->
+        <div class="w-full sm:w-[330px] pl-5 text-left font-normal font-workSans text-[18px] text-[#d6ff00] fade-in-start">
+          <p class="mb-[3px]">Kids’ Style Logo</p>
+          <p class="mb-[3px]">Masculine Logo Style</p>
+          <p class="mb-[3px]">Feminine Logo Style</p>
+          <p class="mb-[3px]">Fun, Serious, Corporate Variety</p>
+        </div>
+      </div>
+      
+      <hr class="my-10 border-t border-[#707070] max-w-[1400px] mx-auto">
+
+      <!-- Graphic & Brand Design Section-->
+      <div class="max-w-[1400px] mx-auto flex flex-wrap items-start justify-between w-full">
+        <!-- Left Side (Web Design) -->
+        <div class="w-full sm:w-[360px] text-left text-4xl font-built_titling font-bold text-[#f2f2f2] fade-in-start">
+          Graphic & Brand Design
+        </div>
+
+        <!-- Center Description -->
+        <div class="w-full sm:w-[675px] text-left font-workSans fade-in-start">
+          <p class="text-[18px] text-[#f2f2f2] font-normal">
+            Goodcut Studio offers comprehensive graphic and brand design services. We help bring your vision to life through high-quality designs for a variety of formats, including posters, brochures, layouts, brand guides, packaging, and more. 
+          </p>
+          <br>
+          <h3 class="font-bold text-[18px] text-[#f2f2f2] mb-4">Our Process:</h3>
+          <ul class="text-[#f2f2f2] text-[18px] font-workSans">
+            <li>
+              <span class="font-bold">Brand Research & Strategy</span>
+              <span class="font-normal"> – <br>Understanding brand identity and goals.</span>
+            </li>
+            <li>
+              <span class="font-bold">Visual Concept Development</span>
+              <span class="font-normal"> – <br>Crafting initial design concepts.</span>
+            </li>
+            <li>
+              <span class="font-bold">Refinement & Execution</span>
+              <span class="font-normal"> – <br>Finalizing the design for branding needs.</span>
+            </li>
+            <li>
+              <span class="font-bold">Brand Asset Delivery</span>
+              <span class="font-normal"> – <br>Providing high-quality digital and print-ready files.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side (Web Design Features) -->
+        <div class="w-full sm:w-[330px] pl-5 text-left font-normal font-workSans text-[18px] text-[#d6ff00] fade-in-start">
+          <p class="mb-[3px]">Posters Layout</p>
+          <p class="mb-[3px]">Branding Design</p>
+          <p class="mb-[3px]">Layout Design</p>
+          <p class="mb-[3px]">Packaging Layout</p>
+        </div>
+      </div>
+      
+      <hr class="my-10 border-t border-[#707070] max-w-[1400px] mx-auto">
+
+      <!-- Web, UI/UX, and Web2/ Web3 Development Section-->
+      <div class="max-w-[1400px] mx-auto flex flex-wrap items-start justify-between w-full">
+        <!-- Left Side (Web Design) -->
+        <div class="w-full sm:w-[360px] text-left text-4xl font-built_titling font-bold text-[#f2f2f2] fade-in-start">
+          Web, UI/UX, and Web2/ Web3 Development
+        </div>
+
+        <!-- Center Description -->
+        <div class="w-full sm:w-[675px] text-left font-workSans fade-in-start">
+          <p class="text-[18px] text-[#f2f2f2] font-normal">
+            We specialize in creating fully functional, visually appealing websites and applications, offering both front-end and back-end development for Web2 and Web3 industries.
+          </p>
+          <br>
+          <h3 class="font-bold text-[18px] text-[#f2f2f2] mb-4">Our Process:</h3>
+          <ul class="text-[#f2f2f2] text-[18px] font-workSans">
+            <li>
+              <span class="font-bold">Discovery & Strategy</span>
+              <span class="font-normal"> – <br>Identifying project needs and user experience goals.</span>
+            </li>
+            <li>
+              <span class="font-bold">Wireframing & Prototyping</span>
+              <span class="font-normal"> – <br>Designing user-friendly interfaces.</span>
+            </li>
+            <li>
+              <span class="font-bold">Development & Testing</span>
+              <span class="font-normal"> – <br>Coding and testing across different platforms.</span>
+            </li>
+            <li>
+              <span class="font-bold">Deployment & Maintenance</span>
+              <span class="font-normal"> – <br>Launching the website and providing post-launch support.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side (Web Design Features) -->
+        <div class="w-full sm:w-[330px] pl-5 text-left font-normal font-workSans text-[18px] text-[#d6ff00] fade-in-start">
+          <p class="mb-[3px]">UI/UX Design</p>
+          <p class="mb-[3px]">Web2 & Web3 Development</p>
+          <p class="mb-[3px]">Front-end & Back-end</p>
+          <p class="mb-[3px]">Development</p>
+          <p class="mb-[3px]">Responsive Web Design</p>
+          <p class="mb-[3px]">Web Branding & Identity</p>
+          <p class="mb-[3px]">Interactive Prototyping</p>
+        </div>
+      </div>
+
+      <hr class="my-10 border-t border-[#707070] max-w-[1400px] mx-auto">
+
+      <!-- Traditional Paintings & Murals Section-->
+      <div class="max-w-[1400px] mx-auto flex flex-wrap items-start justify-between w-full">
+        <!-- Left Side (Web Design) -->
+        <div class="w-full sm:w-[360px] text-left text-4xl font-built_titling font-bold text-[#f2f2f2] fade-in-start">
+          Traditional Paintings & Murals
+        </div>
+
+        <!-- Center Description -->
+        <div class="w-full sm:w-[675px] text-left font-workSans fade-in-start">
+          <p class="text-[18px] text-[#f2f2f2] font-normal">
+            At Goodcut Studio, we create traditional paintings and murals on both small and large scales.
+          </p>
+          <br>
+          <h3 class="font-bold text-[18px] text-[#f2f2f2] mb-4">Our Process:</h3>
+          <ul class="text-[#f2f2f2] text-[18px] font-workSans">
+            <li>
+              <span class="font-bold">Concept & Sketching</span>
+              <span class="font-normal"> – <br>Developing ideas based on client vision.</span>
+            </li>
+            <li>
+              <span class="font-bold">Color & Material Selection</span>
+              <span class="font-normal"> – <br>Choosing appropriate palettes and materials.</span>
+            </li>
+            <li>
+              <span class="font-bold">Execution & Finishing Touches</span>
+              <span class="font-normal"> – <br>Painting and refining details.</span>
+            </li>
+            <li>
+              <span class="font-bold">Installation & Final Presentation</span>
+              <span class="font-normal"> – <br>Ensuring seamless final execution.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side (Web Design Features) -->
+        <div class="w-full sm:w-[330px] pl-5 text-left font-normal font-workSans text-[18px] text-[#d6ff00] fade-in-start">
+          <p class="mb-[3px]">Paintings</p>
+          <p class="mb-[3px]">Props Design</p>
+          <p class="mb-[3px]">Concept Design</p>
+          <p class="mb-[3px]">Installation</p>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- Gif Banner Section -->
+  <section class="relative w-full bg-black items-center">
+    <!-- Banner Image -->
+    <img src="Assets/Image/Service-Banner.png" alt="Sample Animation Image" class="w-full object-cover fade-in-start" />
+
+    <!-- Note Overlay -->
+    <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-black/70 text-white p-3 md:p-4 rounded-md text-xs md:text-sm font-sans leading-snug fade-in-start">
+      TEXT NOT INCLUDED / FOR INFO PURPOSES ONLY<br>
+      <strong class="font-bold text-[#b4e205]">GIF / ANIMATION SECTION</strong>
+    </div> 
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="bg-[#E9EAEC] text-center font-built_titling py-[50px]">
+    <div class="max-w-[1400px] mx-auto px-3 py-[60px] fade-in flex flex-col gap-6 fade-in-start">
+      <!-- Button 1 -->
+      <button  onclick="location.href='/work.html'" class="w-full max-w-full bg-[#b4e205] hover:bg-white transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-semibold uppercase cursor-pointer border-none"
+      >
+        <span class="text-[50px] text-black">SEE ALL OUR WORKS</span>
+        <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[80px] w-[80px] rounded-full object-contain -mr-[40px]"/>
+        </button>
+
+      <!-- Button 2 -->
+      <button onclick="location.href='#hero'" class="w-full max-w-full border-[2.5px] border-black hover:bg-[#b4e205] hover:border-[#b4e205] transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-semibold uppercase cursor-pointer"
+      >
+        <span class="text-[50px] text-black">LET'S CUT</span>
+        <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[80px] w-[80px] rounded-full object-contain -mr-[40px]"/>
+      </button>
+    </div>
+
+    <div onclick="scrollToTop()" class="mx-auto mt-12 mb-[-50px] text-[#a1a1a1] font-workSans w-auto px-5 h-[50px] rounded-full flex items-center justify-center text-[20px] transition-colors duration-300 cursor-pointer font-built_titling font-normal gap-3 fade-in-start" 
+      style="min-width: 140px; max-width: 320px;"
+      >
+      <span class="text-[20px] font-semibold font-built_titling leading-none">↑</span>
+      <span class="text-[20px] font-semibold tracking-wide mt-[6px]">Back to Top</span>
+    </div>
+  </section>
+  
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-6">
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto mb-[-10px]">
+      <div class="flex items-center pt-2">
+        <img src="/Assets/Logo/GOODCUT_1.png" alt="GoodCut Studio Logo" class="h-[30px] w-auto" />
+        <span class="text-[29px] font-semibold font-built_titling ml-2">GOODCUT STUDIO</span>
+      </div>
+      <div class="flex-grow text-right text-[20px] font-workSans font-normal text-white/70">
+        Quezon | Puerto Princesa, Palawan Philippines
+      </div>
+    </div>
+
+    <!-- Border Line -->
+    <div class="w-full max-w-[1400px] border-t border-[#333] mt-2 mx-auto"></div>
+
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto">
+      <div class="py-2 text-[20px] text-white/80 font-workSans font-semibold">&copy;2025</div>
+      <div>
+        <a href="#" class="text-white/50 text-[18px] uppercase font-workSans font-normal hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="/Assets/script/script.js"></script>
+      
+</body>
+</html>

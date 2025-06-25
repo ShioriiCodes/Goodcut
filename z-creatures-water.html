@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GoodCut Studio | Z-Creatures</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Built+Titling&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/node_modules/tailwindcss/tailwind.config.js"></script>
+    <link rel="stylesheet" href="/Assets/css/font.css" />
+    <link href="/Assets/tailwind.css" rel="stylesheet">
+    
+      <!-- Favicon Icon -->
+      <link rel="icon" type="image/png" href="/Assets/Logo/logow.png" sizes="16x16" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="512x512" href="/Assets/Logo/logow.png">
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Fullscreen Wrapper -->
+  <section class="h-screen flex flex-col bg-black text-white font-workSans">
+      <!-- Header -->
+    <header class="bg-black text-white px-6 md:px-[40px] py-10 mr-[-40px] flex justify-between items-center uppercase tracking-widest">
+      <!-- Logo -->
+      <div class="flex items-center gap-2 ml-2">
+        <a href="/index.html">
+          <img src="/Assets/Logo/logow.png" alt="GoodCut Studio Logo" class="h-auto w-[130px]" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center leading-none px-6 md:px-16 py-4 gap-16">
+        <a href="/index2.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Home</a>
+        <a href="/about.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">About</a>
+        <a href="/work.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Works</a>
+        <a href="/service.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Services</a>
+        <!-- Button (Let's Cut) -->
+        <button onclick="openModal()" class="flex items-center gap-2 border-2 border-white px-7 py-1 rounded-full hover:border-[#b4e205] hover:text-[#b4e205] transition leading-none group font-built_titling font-semibold text-2xl tracking-wider">
+          <span class="px-2 mx-auto">Let’s Cut</span>
+          <img src="/Assets/Image/arrow3.png" alt="Arrow" class="h-[36px] w-auto group-hover:hidden mr-[-23px]"/>
+          <img src="/Assets/Image/arrow2.png" alt="Arrow Hover" class="h-[36px] w-auto hidden group-hover:inline mr-[-23px]"/>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center hidden fade-in-start">
+      <div class="relative max-w-[1400px] w-full mx-auto border border-white/40 text-white bg-black/40 px-7 py-[100px]">
+        
+        <!-- Close Button -->
+        <button class="absolute top-0 left-3 text-white font-Bebas_Neue text-5xl hover:text-[#b4e205]" onclick="closeModal()">×</button>
+        
+          <!-- Header: Contact Info & Tagline -->
+          <div class="flex justify-between items-start flex-wrap mb-12 pl-12 mt-[-50px]">
+            <div>
+              <h2 class="text-[#b4e205] text-[50px] font-built_titling font-extrabold mb-1">CONTACT US</h2>
+              <p class="text-2xl font-workSans">contact@goodcut.com</p>
+            </div>
+            <div class="text-right">
+              <h3 class="text-4xl font-workSans">Let’s create together.</h3>
+              <p class="text-2xl text-white/70 font-workSans font-normal">Let us know how we can help.</p>
+            </div>
+          </div>
+
+          <!-- Centered Form -->
+          <div class="flex justify-center">
+            <form class="w-full max-w-[700px] space-y-5 text-white text-left">
+              <!-- Name -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Name*</label>
+                <input type="text" placeholder="Your Name" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px] font-bebas_neue" />
+              </div>
+              <!-- Email -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Email*</label>
+                <input type="email" placeholder="Your email address" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]" />
+              </div>
+              <!-- Message -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Your Message*</label>
+                <textarea rows="4" placeholder="Your message" class="w-full px-4 py-2 pb-16 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]"></textarea>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="text-2xl mt-10 flex items-center gap-4 px-7 py-4 bg-white text-black uppercase font-Bebas_Neue font-normal rounded-full hover:bg-[#b4e205] hover:text-black transition duration-300 leading-none group tracking-wider shadow-none border-none">
+                <span class="px-2 mx-auto">Send Message</span>
+                <img src="/Assets/Image/arrow1.png" alt="Arrow" class="h-12 w-auto group-hover:hidden mr-[-20px]" />
+                <img src="/Assets/Image/arrow1.png" alt="Arrow Hover" class="h-12 w-auto hidden group-hover:inline mr-[-20px]" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <div id="work-items" class="w-full flex justify-center items-center mt-[150px] ">
+     
+      <!-- Back Button (Top Left Corner) -->
+      <a href="/work.html?category=NFT%20COLLECTION" class="fade-in-start absolute z-20 flex items-center gap-2 px-5 py-2 mb-[-400px] bg-black/70 border border-white/30 rounded-full text-white font-built_titling text-xl hover:bg-[#b4e205] hover:text-black transition shadow-lg">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to NFT Collection</span>
+      </a>
+      <!-- Background -->
+      <img src="/Assets/Logo/Z-creatures.png" alt="Arrow" class="h-[300px] w-auto mx-auto block fade-in-start"/>
+    </div>
+  </section>
+
+  <!-- HERO SECTION WITH FULL BACKGROUND IMAGE HEIGHT -->
+  <section class="relative w-full bg-black text-white">
+    <!-- Background Image (natural height) -->
+    <img src="/Assets/Image/Z Creatures Banner@2x.png" alt="Creatures Background" class="w-full h-auto object-cover object-center fade-in-start" />
+
+    <!-- Overlay Content (Bottom Aligned, Bigger) -->
+      <div class="absolute inset-0 flex flex-col justify-end items-center text-center px-6 py-16 z-10 pointer-events-none">
+          <div class="pointer-events-auto w-full">
+            <p class="text-2xl md:text-6xl font-workSans font-light px-4 py-4 rounded mb-4 fade-in-start mb-[-40px]">
+              an <span class="font-bold">ANYO</span><br>side collection
+            </p>
+            <!-- ICONS SECTION BELOW -->
+            <section class="w-full text-white pt-[100px] fade-in-start">
+              <div class="flex flex-wrap justify-center gap-4 md:gap-3 max-w-8xl mx-auto px-5">
+                <!-- Icon Item -->
+                <a href="/z-creatures-fire.html">
+                  <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                    <img src="/Assets/Logo/FIRE.png" alt="Fire" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                    <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Fire</span>
+                  </div>
+                </a>
+                <a href="#water">
+                  <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                    <img src="/Assets/Logo/WATER.png" alt="Water" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                    <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Water</span>
+                  </div>
+                </a>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/EARTH.png" alt="Earth" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Earth</span>
+                </div>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/AIR.png" alt="Air" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Air</span>
+                </div>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/FOOD.png" alt="Food" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Food</span>
+                </div>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/SPACE.png" alt="Space" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Space</span>
+                </div>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/UNDERWORLD.png" alt="Under World" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Under World</span>
+                </div>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/FUTURISTIC.png" alt="Futuristic" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Futuristic</span>
+                </div>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/ABSTRACT.png" alt="Abstract" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Abstract</span>
+                </div>
+                <div class="flex flex-col items-center hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition group">
+                  <img src="/Assets/Logo/MULTIVERSE-1@2x.png" alt="Multiverse" class="h-[125px] w-[125px] mb-3 transform transition-transform duration-300 group-hover:scale-110" />
+                  <span class="text-lg text-gray-300 font-workSans font-medium uppercase">Multiverse</span>
+                </div>
+              </div>
+            </section>
+          </div>
+      </div>
+  </section>
+
+  <!-- HERO COPY SECTION -->
+  <section class="max-w-full bg-black text-white font-workSans">
+    <!-- HERO COPY ----------------------------------------------------------->
+    <div class="mx-auto py-20 max-w-[1400px] ">
+      <p class="mx-auto  text-[36px] md:text-[36px] leading-snug font-semibold text-center pb-[70px] fade-in-start">
+        Alawan. Not quite a single secret place, but an ever present dimension
+        where arcane creatures of remarkable intelligence gleefully zip around
+        us – flying through the skies, storming through seas, slithering in
+        shadows, and running through our streets, able to disappear in colorful
+        shimmers of light.
+      </p>
+
+      <!-- TWO‑COLUMN GRID --------------------------------------------------->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-12 max-w-[1400px] mx-auto">
+        <!-- LEFT COLUMN / ABOUT THE PROJECT -->
+        <div class="md:col-span-5 space-y-6 flex flex-col items-start md:items-start md:pl-0 pl-0">
+          <h2 class="text-[34px] md:text-[34px] font-built_titling font-bold fade-in-start">
+            ABOUT <span class="italic">THE PROJECT</span>
+          </h2>
+          <p class="font-workSans font-normal text-[18px] leading-relaxed text-left max-w-[670px] text-[#f2f2f2] fade-in-start">
+            A flash of color at the corner of your eye, blinks-and-you’ll-miss 
+            movements of magical beings dismissed merely as myths and 
+            legends believed only by children. But there exist pockets of 
+            unseen worlds around us, home to enigmatic creatures called Zigbins.  
+          </p>
+          <p class="font-workSans font-normal text-[18px] leading-relaxed text-left max-w-[670px] text-[#f2f2f2] fade-in-start">
+            Zigbins are all unique - all powerful representatives of their
+            respective kingdoms, and each play their roles to protect their
+            ten orbs of power, where each of their individual gods resides.
+            These one-of-a-kind creatures are strong and powerful in a
+            variety of ways, performing their duties according to their
+            temperaments as fighters, healers, guardians, creators, warriors,
+            mediators, and more while demonstrating control over all the
+            known and unknown elements. 
+          </p>
+          <p class="font-workSans font-normal text-[18px] leading-relaxed text-left max-w-[670px] text-[#f2f2f2] fade-in-start">
+            Legend says that only the worthy may catch them - as spirit
+            companions and invaluable guides for life - some even able to
+            share their powers and abilities with their masters. Although
+            many have tried to hunt down these Zigbins for their
+            extraordinary power, they remain elusive, with only a handful
+            who have succeeded - their power increased and wishes
+            granted in exchange for undying loyalty. 
+          </p>
+          <p class="font-workSans font-normal text-[18px] leading-relaxed text-left max-w-[670px] text-[#f2f2f2] fade-in-start">
+            Discover and befriend your own Z-creature from the ten magical
+            kingdoms of Alawan, only on Stargaze.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN / PROJECT FACTS -->
+        <div class="ml-[120px] md:col-span-7 space-y-12 flex flex-col items-end md:pr-0 pr-0">
+          <!-- Project Background block (ALIGNED like meta) -->
+          <div class="flex justify-start items-start gap-[100px] w-full fade-in-start">
+            <h2 class="text-[34px] md:text-[34px] font-built_titling font-bold whitespace-nowrap leading-tight">
+              PROJECT <span class="italic">BACKGROUND</span>
+            </h2>
+            <p class="font-workSans font-normal text-[18px] text-left max-w-[300px]">
+              For the past 5 years ANYO Collection with the collaboration with Stargazed produce one of the best collections. For the past 5 years ANYO Collection with the with Stargazed produce one of the best.
+            </p>
+          </div>
+
+          <!-- Meta blocks -->
+          <div class="space-y-10 text-sm md:text-base w-full">
+            <!-- Year -->
+            <div class="h-px bg-lime-400 mb-4"></div>
+              <div class="flex justify-start items-start gap-[305px] w-full fade-in-start">
+                <h2 class="text-[34px] md:text-[34px] font-built_titling font-bold whitespace-nowrap leading-tight">
+                  <span>YEAR</span>
+                </h2>
+                <p class="font-workSans font-normal text-[18px] text-left max-w-[190px]">
+                  2022 - 2023
+                </p>
+              </div>
+            <!-- Industry -->
+            <div class="h-px bg-lime-400 mb-4"></div>
+              <div class="flex justify-start items-start gap-[250px] w-full fade-in-start">
+                <h2 class="text-[34px] md:text-[34px] font-built_titling font-bold whitespace-nowrap leading-tight ">
+                  <span>INDUSTRY</span>
+                </h2>
+                <p class="font-workSans font-normal text-[18px] text-left max-w-[190px]">
+                  nft - Stargazed
+                </p>
+              </div>
+            <div class="h-px bg-lime-400 mb-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-full bg-black text-white font-workSans">
+    <!-- RIGHT COLUMN / PROJECT FACTS -->
+    <div class="md:col-span-7 space-y-12 flex flex-col items-end md:pr-0 pr-0 max-w-[1400px] mx-auto">
+      <!-- Meta blocks -->
+      <div class="space-y-3 text-sm md:text-base w-full">
+        <div class="flex justify-start items-start w-full fade-in-start">
+          <h2 class="text-[44px] md:text-[44px] text-[#b4e205] font-built_titling font-bold whitespace-nowrap leading-tight">
+            <span>10 KINGDOMS</span>
+          </h2>
+        </div>
+          <div class="h-px max-h-[1400px] bg-lime-400 mb-10"></div>
+      </div>
+      <section class="w-full text-white">
+        <div class="max-h-[1400px] grid grid-cols-2 md:grid-cols-5 gap-y-4">
+        <!-- Icon Item -->
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/FIRE.png" alt="Fire" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Fire</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Mayon-Al</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Air.png" alt="Water" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Air</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Amihan & Habagat</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/WATER.png" alt="Earth" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Water</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Tubbataha</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/EARTH.png" alt="Air" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Earth</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Bakawanara</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/FOOD.png" alt="Food" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Food</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Lami</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/FUTURISTIC.png" alt="Space" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Futuristic</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">kongkreto</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/UNDERWORLD.png" alt="Under World" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Underworld</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Biringan</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/SPACE.png" alt="Futuristic" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Space</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Bulalakaw</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/ABSTRACT.png" alt="Abstract" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Abstract</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Kwadrado Kanto</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/MULTIVERSE-1@2x.png" alt="Multiverse" class="h-[110px] w-[110px] mb-3" />
+            <span class="text-[18px] text-gray-300 font-built_titling font-normal uppercase">Multiverse</span>
+            <span class="text-[24px] text-gray-300 font-built_titling font-medium uppercase">Anino Bahag-Hari</span>
+          </div>
+        </div>
+
+        <!-- NFT -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 max-w-[1400px] mx-auto text-white text-[28px] font-semibold font-built_titling py-[100px]">
+          <!-- Row 1 -->
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Fire@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Air@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Water@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Earth@2x.png');"></div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Food@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Futuristic@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Underworld@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Space@2x.png');"></div>
+          </div>
+
+          <!-- Row 3 (Three centered items) -->
+          <div class="col-span-4 flex justify-center gap-4 fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Abstract@2x.png');"></div>
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Multiverse@2x.png');"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <div class="w-full bg-black flex justify-center items-center pb-[80px]" id="water">
+    <section class="relative w-full bg-black items-center">
+      <img src="Assets/Image/BG_WATER.jpg" alt="Sample Animation Image" class="w-full object-cover fade-in fade-in-start" />
+    
+      <img 
+        src="/Assets/Image/NFT/Z_FIRE_AD_001-1@2x1.png" 
+        alt="Water NFT" 
+        class="absolute top-10 left-0 h-[480px] w-auto object-contain z-20 rotate-[-12deg] pointer-events-none fade-in-start"
+        style="max-width: 100vw; margin-left: -50px;"
+      />
+
+        <!-- Fire Logo Centered at Top -->
+      <div class="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center w-full px-6">
+        <!-- Left Image -->
+        <img 
+          src="/Assets/Image/NFT/Z_FIRE_CL_02@2x1.png" 
+          alt="Water NFT Small" 
+          class="h-[300px] w-auto object-contain z-20 pointer-events-none relative -ml-24 mr-10 fade-in-start"
+          style="max-width: 40vw; top: 160px;"
+        />
+
+        <!-- Centered Text Block -->
+        <div class="text-center fade-in-start">
+          <img src="/Assets/Logo/WATER.png" alt="Fire Logo" class="h-[254px] w-[254px] object-contain mx-auto" />
+          <span class="block font-workSans font-light text-[#999999] text-[48px] mb-[-20px] tracking-wide" style="letter-spacing: .45em;">KINGDOM OF</span>
+          <span class="block font-built_titling font-semibold text-white text-[200px] leading-none mb-2">Tubbataha</span>
+          <span class="block font-built_titling font-semibold text-white text-[64px] uppercase tracking-wider">type: water z-creature</span>
+        </div>
+
+        <img 
+          src="/Assets/Image/NFT/ZGOD_FIRE2@2x1.png" 
+          alt="Water NFT Small" 
+          class="h-[670px] w-auto object-contain z-20 pointer-events-none mr-[-550px] fade-in-start"
+          style="max-width: 40vw;"
+        />
+      </div>
+    </section>
+  </div>
+
+    <!-- HERO COPY SECTION -->
+  <section class="max-w-full bg-black text-white font-workSans">
+    <!-- HERO COPY ----------------------------------------------------------->
+    <div class="mx-auto pb-10 max-w-[1400px]">
+      <p class="mx-auto text-[36px] md:text-[40px] leading-[1.2] font-semibold text-center pb-[70px] fade-in-start">
+        It is said that the god of Mayon-al was first and foremost, a fighter
+        with a terrible temper. With power drawn from pure and undiluted
+        rage, the fire god sped through the world, moving plates of land,
+        cracking them into pieces according to its will.
+      </p> 
+      <div class="mx-auto pb-10 max-w-[692px]">
+        <p class="mx-auto text-[20px] md:text-[18px] leading-[1.5] font-normal text-center text-[#ccc] mt-[-30px] fade-in-start">
+          Being of pure energy and primers of both creation
+          and destruction, the z-god of Mayon-al sits on
+          their volcanic throne, as the ruler of the first and
+          primordial fire that warms the earth. Satisfied by
+          its work, it created their own Forest of Fire, a
+          realm hotter than any known hells where they are
+          known to reside.
+        </p>  
+      </div>
+      <!-- ICONS SECTION BELOW -->
+      <section class="w-full text-white pt-[100px]">
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 max-w-8xl mx-auto">
+          <!-- Icon Item -->
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/ZGOD_FIRE2-1@2x.png" alt="Fire" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/Z-GOD.png" alt="Fire Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-medium uppercase"><strong>1</strong> - Z-God</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z_FIRE_CL_02-1@2x.png" alt="Water" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/CELESTIAL.png" alt="Water Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-medium uppercase"><strong>3</strong> - Celestial</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z_FIRE_AD_001-1@2x.png" alt="Earth" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/ADARNA.png" alt="Earth Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-medium uppercase"><strong>5</strong> - Adarna</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z_FIRE_LG_005@2x.png" alt="Air" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/LEGEND.png" alt="Air Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-medium uppercase"><strong>7</strong> - Legend</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z_FIRE_EP_002@2x.png" alt="Food" class="h-[128px] w-[142px] mb-3 " />
+            <img src="/Assets/Logo/Class/EPIC.png" alt="Food Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-sm text-gray-300 font-workSans font-medium uppercase"><strong>10</strong> - Epic</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z_FIRE_HR_007.png" alt="Space" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/HERO.png" alt="Space Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-medium uppercase"><strong>12</strong> - Hero</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z-FIRE_ZH_010@2x.png" alt="Under World" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/ZIHARLIKA.png" alt="Under World Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-medium uppercase"><strong>15</strong> - Ziharlika</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z-FIRE_Z-AR_011.png" alt="Futuristic" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/Z-ARMY.png" alt="Futuristic Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-medium uppercase"><strong>20</strong> - Z-Army</span>
+          </div>
+          <div class="flex flex-col items-center fade-in-start">
+            <img src="/Assets/Logo/Class/Z-FIRE_ZV_017@2x.png" alt="Abstract" class="h-[128px] w-[142px] mb-3" />
+            <img src="/Assets/Logo/Class/ZIVILIAN.png" alt="Abstract Logo Below" class="h-[60px] w-[60px] mb-3" />
+            <span class="text-lg text-gray-300 font-workSans font-light uppercase"><strong>27</strong> - Zivilian</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto pb-10 max-w-[692px]">
+        <p class="mx-auto text-[20px] md:text-[18px] leading-[1.5] font-normal text-center text-[#ccc] pt-[100px] fade-in-start">
+          Its travels created volcanoes and rocky mountains, with hot springs and
+          smaller fire forests decorating these haunts where their devoted followers,
+          lesser warriors, spirits and lower Z-creatures would gather and reside.
+          <br><br>
+          The Zigbins of Mayon-al are fire manipulators and capable combatants. With
+          heightened speeds, super strength, and competent shield casting, they are
+          desirable if not fortheir rash and impulsive natures that have them rushing
+          into the first signs of battle with only healers being able to challenge them
+          into submission.
+        </p>  
+      </div>
+    </div>
+  </section>
+
+<!-- NFT Section with Full Gradient Background -->
+<section class="w-full bg-black bg-gradient-to-t from-[#400c03] via-[#cc492f40] to-transparent text-white font-workSans py-[140px]">
+  <div class="flex flex-col md:flex-row justify-center items-start gap-4 max-w-[1400px] mx-auto font-built_titling relative z-0">
+    
+    <!-- First Large Image (Fire) -->
+    <div class="flex-shrink-0">
+      <div class="w-[456px] h-[412px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z-God/Z-God_Fire@2x.png');"></div>
+    </div>
+
+    <!-- Smaller Images Grid aligned to right -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-4">
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_CL_03-1@2x.png');"></div>
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_AD_002-1@2x.png');"></div>
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_LG_004@2x.png');"></div>
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZH_010@2x.png');"></div>
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_HR_005@2x.png');"></div>
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_Z-AR_015@2x.png');"></div>
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_Z-AR_006@2x.png');"></div>
+      <div class="w-[220px] h-[199px] bg-cover bg-center fade-in-start" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZV_026@2x.png');"></div>
+    </div>
+  </div>
+</section>
+
+    <section class="w-full bg-black text-white">
+        <!-- NFT -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 max-w-[1400px] mx-auto text-white text-[28px] font-semibold font-built_titling py-[100px]">
+          <!-- Row 1 -->
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_CL_001@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_EP_010@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_HR_009@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_HR_002@2x.png');"></div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_CL_03@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_HR_012@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZH_001@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZH_003@2x.png');"></div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZV_009@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_EP_009@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_EP_001@2x.png');"></div>
+          </div>
+          <div class="item fade-in-start" >
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZV_004@2x.png');"></div>
+          </div>
+
+          <!-- Row 4 (Three centered items) -->
+          <div class="col-span-4 flex justify-center gap-4 fade-in-start">
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZV_003@2x.png');"></div>
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_ZV_022@2x.png');"></div>
+            <div class="w-[338px] h-[305px] bg-cover bg-center" style="background-image: url('/Assets/Image/NFT/Z_FIRE_AD_002@2x.png');"></div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="h-[30vh] bg-black mx-auto px-4 text-white text-lg leading-relaxed text-center flex flex-col items-center">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-4 items-center px-2 pb-10 fade-in-start">
+            <div>
+              <a href="https://www.stargaze.zone/m/z-creatures/tokens" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Z-CREATURE.png" alt="Logo 1" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+            <div>
+              <a href="#" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Esoj.png" alt="Logo 2" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.anyo-nft.com/" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Anyo.png" alt="Logo 3" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.stargaze.zone/" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Stargaze.png" alt="Logo 4" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-between items-center max-w-[1400px] mx-auto fade-in-start">
+            <div class="text-[18px] text-white font-workSans font-light">&copy;2025 ANYO. All Rights Reserved.</div>
+          </div>
+            <div onclick="scrollToTop()" class="mx-auto mt-12 mb-[-50px] text-[#a1a1a1] font-workSans w-auto px-5 h-[50px] rounded-full flex items-center justify-center text-[20px] transition-colors duration-300 cursor-pointer font-built_titling font-normal gap-3 fade-in-start"
+              style="min-width: 140px; max-width: 320px;">
+              <span class="text-[20px] font-semibold font-built_titling leading-none mb-[-85px]">↑</span>
+              <span class="text-[20px] font-semibold tracking-wide mt-[6px] mb-[-85px]">Back to Top</span>
+            </div>
+        </div>
+          <div class="w-full max-w-[1400px] border-t border-[#333] mx-auto pb-5"></div>
+    </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-6">
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto mb-[-10px]">
+      <div class="flex items-center pt-2">
+        <img src="/Assets/Logo/GOODCUT_1.png" alt="GoodCut Studio Logo" class="h-[30px] w-auto" />
+        <span class="text-[29px] font-semibold font-built_titling ml-2">GOODCUT STUDIO</span>
+      </div>
+      <div class="flex-grow text-right text-[20px] font-workSans font-normal text-white/70">
+        Quezon | Puerto Princesa, Palawan Philippines
+      </div>
+    </div>
+
+    <!-- Border Line -->
+    <div class="w-full max-w-[1400px] border-t border-[#333] mt-2 mx-auto"></div>
+
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto">
+      <div class="py-2 text-[20px] text-white/80 font-workSans font-semibold">&copy;2025</div>
+      <div>
+        <a href="#" class="text-white/50 text-[18px] uppercase font-workSans font-normal hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+    
+  <script src="/Assets/script/script.js"></script>
+
+</body>
+</html>
