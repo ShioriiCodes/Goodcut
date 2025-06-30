@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GoodCut Studio | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Built+Titling&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/node_modules/tailwindcss/tailwind.config.js"></script>
+    <link rel="stylesheet" href="/Assets/css/font.css" />
+    <link href="/Assets/tailwind.css" rel="stylesheet">
+
+      <!-- Favicon Icon -->
+      <link rel="icon" type="image/png" href="/Assets/Logo/logow.png" sizes="16x16" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="512x512" href="/Assets/Logo/logow.png">
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <!-- <div id="splash-screen" class="fixed inset-0 flex items-center justify-center z-50 h-screen w-full bg-white transition-opacity duration-700">
+    <img
+      id="splash-logo"
+      src="/Assets/Logo/logob.png"
+      alt="Logo"
+      class="h-[300px]"
+    />
+  </div> -->
+
+    <!-- Fullscreen Wrapper -->
+    <section class="h-screen flex flex-col bg-black text-white font-workSans">
+      <!-- Header -->
+      <header class="bg-black text-white px-6 md:px-[40px] py-10 mr-[-40px] flex justify-between items-center uppercase tracking-widest">
+      <!-- Logo -->
+      <div class="flex items-center gap-2 ml-2">
+        <a href="/index.html">
+          <img src="/Assets/Logo/logow.png" alt="GoodCut Studio Logo" class="h-auto w-[130px]" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center leading-none px-6 md:px-16 py-4 gap-16">
+        <a href="/index2.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Home</a>
+        <a href="/about.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">About</a>
+        <a href="/work.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Works</a>
+        <a href="/service.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Services</a>
+        <!-- Button (Let's Cut) -->
+        <button onclick="openModal()" class="flex items-center gap-2 border-2 border-white px-7 py-1 rounded-full hover:border-[#b4e205] hover:text-[#b4e205] transition leading-none group font-built_titling font-semibold text-2xl tracking-wider">
+          <span class="px-2 mx-auto">Let’s Cut</span>
+          <img src="/Assets/Image/arrow3.png" alt="Arrow" class="h-[36px] w-auto group-hover:hidden mr-[-23px]"/>
+          <img src="/Assets/Image/arrow2.png" alt="Arrow Hover" class="h-[36px] w-auto hidden group-hover:inline mr-[-23px]"/>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center hidden fade-in-start">
+      <div class="relative max-w-[1400px] w-full mx-auto border border-white/40 text-white bg-black/40 px-7 py-[100px]">
+        
+        <!-- Close Button -->
+        <button class="absolute top-0 left-3 font-Bebas_Neue text-white text-6xl hover:text-[#b4e205]" onclick="closeModal()">×</button>
+        
+        <!-- Header: Contact Info & Tagline -->
+        <div class="flex justify-between items-start flex-wrap mb-12 pl-12 mt-[-50px]">
+          <div>
+            <h2 class="text-[#b4e205] text-[50px] font-built_titling font-extrabold mb-1">CONTACT US</h2>
+            <p class="text-2xl font-workSans">contact@goodcut.com</p>
+          </div>
+          <div class="text-right">
+            <h3 class="text-4xl font-workSans">Let’s create together.</h3>
+            <p class="text-2xl text-white/70 font-workSans font-normal">Let us know how we can help.</p>
+          </div>
+        </div>
+
+        <!-- Centered Form -->
+        <div class="flex justify-center">
+          <form class="w-full max-w-[700px] space-y-5 text-white text-left">
+            <!-- Name -->
+            <div>
+              <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Name*</label>
+              <input type="text" placeholder="Your Name" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px] font-bebas_neue" />
+            </div>
+            <!-- Email -->
+            <div>
+              <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Email*</label>
+              <input type="email" placeholder="Your email address" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]" />
+            </div>
+            <!-- Message -->
+            <div>
+              <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Your Message*</label>
+              <textarea rows="4" placeholder="Your message" class="w-full px-4 py-2 pb-16 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="text-2xl mt-10 flex items-center gap-4 px-7 py-2 bg-white text-black uppercase font-Bebas_Neue font-normal rounded-full hover:bg-[#b4e205] hover:text-black transition duration-300 leading-none group tracking-wider shadow-none border-none">
+              <span class="px-2 mx-auto">Send Message</span>
+              <img src="/Assets/svg/arrow.svg" alt="Arrow" class="h-12 w-auto group-hover:hidden mr-[-20px]" />
+              <img src="/Assets/svg/arrow.svg" alt="Arrow Hover" class="h-12 w-auto hidden group-hover:inline mr-[-20px]" />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <!-- Hero Content -->
+      <div id="hero" class="flex-1 px-6 md:px-13 flex items-center justify-center ">
+        <div class="max-w-[1400px] w-full mx-auto space-y-10 fade-in-start">
+          <!-- Title -->
+          <h1 class="text-[34px] md:text-[60px] font-semibold leading-[1] tracking-wide text-white">
+            GoodCut Studio is an 
+            <span class="text-[#f9f0d7] font-semibold">independent creative<br class="hidden md:block" />
+            studio in Palawan</span>, bringing together various <br class="hidden md:block" />
+            artistic disciplines—<span class="font-semibold">from traditional to digital arts.</span>
+          </h1>
+
+          <!-- Description + CTA -->
+          <div class="border-y border-[#b4e205] py-6">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <p class="text-[#b4e205] text-[24px] leading-[1.2] font-workSans">
+                Established in January 2024, GoodCut Studio is a creative powerhouse located <br />
+                in the beautiful island of Palawan, Philippines. We specialize in blending artistry <br />
+                and innovation to create visual narratives that connect with global audiences.
+              </p>
+              <button
+                onclick="location.href='/work.html'"
+                class="group inline-flex items-center font-semibold gap-2 text-[#b4e205] border-2 border-[#b4e205] px-8 py-2 rounded-full transition duration-300 font-built_titling text-[24px] font-normal hover:text-white hover:border-white hover:bg-black">
+                Let’s Discuss your project
+                <img src="/Assets/svg/ArrowG.svg" alt="arrow" class="h-[50px] w-auto transition duration-200 group-hover:hidden mr-[-24px] pl-4" />
+                <img src="/Assets/svg/ArrowW.svg" alt="arrow hover" class="h-[50px] w-auto transition duration-200 hidden group-hover:inline mr-[-24px] pl-4" />
+              </button>
+              <!-- <button
+                onclick="location.href='/work.html'"
+                class="group inline-flex items-center font-semibold gap-2 text-[#b4e205] border-2 border-[#b4e205] px-8 py-2 rounded-full transition duration-300 font-built_titling text-[24px] font-normal bg-transparent hover:bg-white hover:text-black hover:border-white">
+                Let’s Discuss your project
+                <img src="/Assets/svg/ArrowG.svg" alt="arrow" class="h-[50px] w-auto transition duration-200 group-hover:hidden mr-[-24px] pl-4" />
+                <img src="/Assets/svg/arrow.svg" alt="arrow hover" class="h-[50px] w-auto transition duration-200 hidden group-hover:inline mr-[-24px] pl-4" />
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gif Banner Section -->
+    <section class="relative w-full bg-black items-center">
+      <img src="Assets/Image/ANIMATION-COVER-PHOTO-update.gif" alt="Sample Animation Image" class="w-full object-cover fade-in-start" />
+    </section>
+
+    <!-- About Studio -->
+    <section class="bg-[#f2f2f2] text-black py-32 px-6 md:px-16 ">
+      <div class="max-w-[1400px] mx-auto fade-in-start">
+        <!-- Section Title -->
+        <h2 class="text-5xl font-built_titling font-bold not-italic">
+          ABOUT <em class="italic font-bold">THE STUDIO</em>
+        </h2>
+        <!-- Intro Paragraph -->
+        <p class="text-3xl md:text-[34px] text-black font-workSans font-semibold py-16">
+          We are passionate about digital creativity, offering services ranging from concept art, illustration, logo design, graphic design, and creative pitching.
+        </p>
+
+        <hr class="border-black mb-6"/>
+
+        <!-- Bottom Row -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6 py-6">
+          <p class="text-base md:text-2xl text-[#222] leading-[.9] font-workSans font-normal">
+            Our studio is committed to empowering aspiring artists in<br class="hidden md:block"> Palawan and fostering a community that celebrates creativity.
+          </p>
+
+          <button 
+            onclick="location.href='/about.html'"
+            class="inline-flex items-center gap-2 text-black bg-white hover:bg-black hover:text-white hover:border-white border-[2.5px] border-black px-8 py-[5px] rounded-full transition duration-300 font-['Bebas_Neue'] text-[25px] group"
+          >
+            <span>MORE ABOUT THE STUDIO</span>
+            <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[55px] w-auto mr-[-26px] ml-6 group-hover:hidden" />
+            <img src="/Assets/svg/ArrowW.svg" alt="arrow hover" class="h-[55px] w-auto mr-[-26px] ml-6 hidden group-hover:inline" />
+          </button>
+        </div>
+
+        <hr class="border-black "/>
+
+      </div>
+    </section>
+
+    <!-- Recent Works Section -->
+    <section class="bg-black text-white py-[130px] px-5">
+      <div class="max-w-[1400px] mx-auto pb-[50px] pt-2">
+        <!-- Section Title -->
+        <h2 class="text-5xl font-built_titling font-bold not-italic uppercase text-[#b4e205] ml-4 mb-11 fade-in-start">
+          RECENT <em class="italic font-bold">WORKS</em>
+        </h2>
+
+        <!-- Project Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 fade-in-start">
+          
+          <!-- Card 1 -->
+          <div class="hover:shadow-lg transition">
+            <img src="/Assets/Image/Redhorse.png" alt="Sentiped Work 1" class="mb-4 w-full h-auto max-h-[1000px] object-contain">
+            <div class="flex flex-wrap gap-2 mb-2 font-built_titling ml-4 pb-10 pt-2">
+              <span class="text-lg px-3 py-1 text-[#A0A0A0] font-semibold rounded-full border border-[#A0A0A0]">Animation</span>
+              <span class="text-lg px-3 py-1 text-[#A0A0A0] font-semibold rounded-full border border-[#A0A0A0]">Game Development</span>
+            </div>
+            <h3 class="text-4xl font-bold text-white font-built_titling ml-4 pb-3">SENTIPED</h3>
+            <p class="text-[#ccc] mt-2 text-base ml-4 pb-6 max-w-[290px]">Morbi ac velit urna. Vivamus sit amet lacus condimentum, consectetur nunc ac, tempor nunc. Fusce quis nibh ex.</p>
+            <a href="/work.html" class="text-[20px] inline-block mt-4 ml-4 text-white font-bold underline underline-offset-4 decoration-white hover:text-[#b4e205] hover:decoration-[#b4e205] transition duration-300 font-built_titling">
+              VIEW PROJECT
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="hover:shadow-lg transition">
+            <img src="/Assets/Image/Redhorse.png" alt="Sentiped Work 1" class="mb-4 w-full h-auto max-h-[1000px] object-contain">
+            <div class="flex flex-wrap gap-2 mb-2 font-built_titling ml-4 pb-10 pt-2">
+              <span class="text-lg px-3 py-1 text-[#A0A0A0] font-semibold rounded-full border border-[#A0A0A0]">Animation</span>
+              <span class="text-lg px-3 py-1 text-[#A0A0A0] font-semibold rounded-full border border-[#A0A0A0]">Game Development</span>
+            </div>
+            <h3 class="text-4xl font-bold text-white font-built_titling ml-4 pb-3">SENTIPED</h3>
+            <p class="text-[#ccc] mt-2 text-base ml-4 pb-6 max-w-[290px]">Morbi ac velit urna. Vivamus sit amet lacus condimentum, consectetur nunc ac, tempor nunc. Fusce quis nibh ex.</p>
+            <a href="/work.html" class="text-[20px] inline-block mt-4 ml-4 text-white font-bold underline underline-offset-4 decoration-white hover:text-[#b4e205] hover:decoration-[#b4e205] transition duration-300 font-built_titling">
+              VIEW PROJECT
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="hover:shadow-lg transition">
+            <img src="/Assets/Image/Redhorse.png" alt="Sentiped Work 1" class="mb-4 w-full h-auto max-h-[1000px] object-contain">
+            <div class="flex flex-wrap gap-2 mb-2 font-built_titling ml-4 pb-10 pt-2">
+              <span class="text-lg px-3 py-1 text-[#A0A0A0] font-semibold rounded-full border border-[#A0A0A0]">Animation</span>
+              <span class="text-lg px-3 py-1 text-[#A0A0A0] font-semibold rounded-full border border-[#A0A0A0]">Game Development</span>
+            </div>
+            <h3 class="text-4xl font-bold text-white font-built_titling ml-4 pb-3">SENTIPED</h3>
+            <p class="text-[#ccc] mt-2 text-base ml-4 pb-6 max-w-[290px]">Morbi ac velit urna. Vivamus sit amet lacus condimentum, consectetur nunc ac, tempor nunc. Fusce quis nibh ex.</p>
+            <a href="/work.html" class="text-[20px] inline-block mt-4 ml-4 text-white font-bold underline underline-offset-4 decoration-white hover:text-[#b4e205] hover:decoration-[#b4e205] transition duration-300 font-built_titling">
+              VIEW PROJECT
+            </a>
+          </div>
+
+          <!-- Repeat Card 2 and 3 -->
+          <!-- You can duplicate the above block for each card -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-[#555] text-center font-built_titling py-[50px]">
+      <div class="max-w-[1400px] mx-auto px-3 py-[60px] fade-in fade-in-start">
+        <button 
+          onclick="location.href='/work.html'"
+          class="w-full max-w-full bg-[#b4e205] hover:bg-black hover:text-white transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-bold uppercase cursor-pointer border-none group"
+        >
+          <span class="text-[50px] text-black font-semibold group-hover:text-white transition">SEE ALL OUR WORKS</span>
+          <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[80px] w-[80px] rounded-full object-contain -mr-[38px] group-hover:hidden"/>
+          <img src="/Assets/svg/ArrowW.svg" alt="arrow hover" class="h-[80px] w-[80px] rounded-full object-contain -mr-[38px] hidden group-hover:inline"/>
+        </button>
+      </div>
+    </section>
+
+    <!-- Services section -->
+      <section class="bg-black text-white py-[140px]">
+        <div class="max-w-[1400px] mx-auto pb-[50px] pt-[10px] fade-in-start">
+          <h2 class="text-[54px] font-bold uppercase font-built_titling text-[#b4e205] mb-[20px]">
+            SERVICES
+          </h2>
+          <p class="text-[36px] font-workSans font-semibold py-[25px] mb-[40px] leading-[1.1]">
+            As we explore the creative industry in Palawan, Philippines, it’s clear that there’s a growing need for unique solutions that grab attention. 
+            <span class="text-[#f9f0d7] font-semibold">GoodCut Studio steps into this scene as a leader, filling the gap for all kinds of creative services.</span>
+          </p>
+
+          <!-- Divider -->
+          <hr class="border-t border-[#b4e205] my-[20px]" />
+
+          <!-- Bottom Row -->
+          <div class="flex flex-wrap md:flex-nowrap justify-between items-center gap-[20px]">
+            <div class="flex-1 max-w-[600px] ">
+              <p class="text-[24px] text-[#b4e205] font-workSans leading-[1.2]">
+                We started because we saw this need and wanted to be
+                known as the best in creativity and innovation, not just in
+                Palawan, but everywhere.
+              </p>
+            </div>
+            <div class="flex-shrink-0 mt-6 md:mt-0">
+              <!-- CTA Button -->
+              <button onclick="location.href='/work.html'" class="bg-black font-built_titling font-semibold border-[2.5px] border-[#b4e205] text-[#b4e205] hover:text-white hover:border-white transition-all duration-200 px-[70px] py-[5px] rounded-[60px] text-[25px] font-bebas flex items-center gap-[5px] group">
+                <span class="pr-[40px]">SEE OUR EXPERTISE</span>
+                <img src="/Assets/svg/ArrowG.svg" alt="arrow" class="h-[50px] transition-all duration-300 group-hover:hidden pl-6 mr-[-63px]"/>
+                <img src="/Assets/svg/ArrowW.svg" alt="arrow hover" class="h-[50px] transition-all duration-600 hidden group-hover:inline pl-6 mr-[-63px]"/>
+              </button>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <hr class="border-t border-[#b4e205] my-[20px]" />
+
+        </div>
+      </section>
+
+    <!-- Gif Banner Section -->
+    <section class="relative w-full bg-black items-center">
+      <!-- Banner Image -->
+      <img src="Assets/Image/Service-Banner.png" alt="Sample Animation Image" class="w-full object-cover fade-in-start" />
+
+      <!-- Note Overlay -->
+      <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-black/70 text-white p-3 md:p-4 rounded-md text-xs md:text-sm font-sans leading-snug">
+        TEXT NOT INCLUDED / FOR INFO PURPOSES ONLY<br>
+        <strong class="font-bold text-[#b4e205]">GIF / ANIMATION SECTION</strong>
+      </div> 
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-white text-black pt-[80px] px-5 pb-[50px]">
+      <div class="max-w-[1400px] mx-auto pt-[40px] pb-[20px] fade-in-start">
+        <h2 class="text-[50px] font-bold uppercase font-built_titling py-[20px]">
+          CONTACT <em class="italic">US</em>
+        </h2>
+        <p class="text-[180px] font-bold font-built_titling m-0 p-0 leading-none pb-[30px]">
+          WORK WITH US
+        </p>
+
+      <!-- Contact Button -->
+      <button
+        class="w-full max-w-full h-[95px] bg-white border-[3px] border-black font-semibold text-black text-[55px] uppercase font-built_titling px-[30px] rounded-full flex items-center justify-between gap-[20px] hover:border-black hover:text-white hover:bg-black transition-all duration-300 cursor-pointer group"
+      >
+        <span class="pl-2">Let's Cut</span>
+        <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[75px] w-auto mr-[-20px] group-hover:hidden" />
+        <img src="/Assets/svg/ArrowW.svg" alt="arrow hover" class="h-[75px] w-auto mr-[-20px] hidden group-hover:inline" />
+      </button>
+      </div>
+
+      <div onclick="scrollToTop()"class="mx-auto mt-12 mb-[-50px] text-[#a1a1a1] font-workSans w-auto px-5 h-[50px] rounded-full flex items-center justify-center text-[20px] transition-colors duration-300 cursor-pointer font-built_titling font-normal gap-3 fade-in-start"
+        style="min-width: 140px; max-width: 320px;">
+        <span class="text-[20px] font-semibold font-built_titling leading-none">↑</span>
+        <span class="text-[20px] font-semibold tracking-wide mt-[6px]">Back to Top</span>
+      </div>
+    </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-6">
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto mb-[-10px]">
+      <div class="flex items-center pt-2">
+        <img src="/Assets/Logo/GOODCUT_1.png" alt="GoodCut Studio Logo" class="h-[30px] w-auto" />
+        <span class="text-[29px] font-semibold font-built_titling ml-2">GOODCUT STUDIO</span>
+      </div>
+      <div class="flex-grow text-right text-[20px] font-workSans font-normal text-white/70">
+        Quezon | Puerto Princesa, Palawan Philippines
+      </div>
+    </div>
+
+    <!-- Border Line -->
+    <div class="w-full max-w-[1400px] border-t border-[#333] mt-2 mx-auto"></div>
+
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto">
+      <div class="py-2 text-[20px] text-white/80 font-workSans font-semibold">&copy;2025</div>
+      <div>
+        <a href="#" class="text-white/50 text-[18px] uppercase font-workSans font-normal hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+    <script src="/Assets/script/script.js"></script>
+      
+</body>
+</html>
