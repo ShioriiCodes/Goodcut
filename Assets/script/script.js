@@ -244,8 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = 'z-creature.html';
   });
 
-
-
   const categoryLinks = document.querySelectorAll('.category-link');
 
   // Get the current page from the URL
