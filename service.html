@@ -460,17 +460,20 @@
   <section class="bg-[#E9EAEC] text-center font-built_titling py-[50px]">
     <div class="max-w-[1400px] mx-auto px-3 py-[60px] fade-in flex flex-col gap-6 fade-in-start">
       <!-- Button 1 -->
-      <button  onclick="location.href='/work.html'" class="w-full max-w-full bg-[#b4e205] hover:bg-white transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-semibold uppercase cursor-pointer border-none"
-      >
-        <span class="text-[50px] text-black">SEE ALL OUR WORKS</span>
-        <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[80px] w-[80px] rounded-full object-contain -mr-[40px]"/>
-        </button>
+      <button type="button" onclick="location.href='/work.html'"
+        class="w-full max-w-full bg-[#b4e205] text-black hover:bg-white hover:text-black transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-bold uppercase cursor-pointer border-none group"
+        >
+        <span class="text-[50px] font-semibold transition group-hover:text-black">SEE ALL OUR WORKS</span>
+        <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[80px] w-[80px] rounded-full object-contain -mr-[38px]"/> 
+      </button>
 
       <!-- Button 2 -->
-      <button onclick="location.href='#hero'" class="w-full max-w-full border-[2.5px] border-black hover:bg-[#b4e205] hover:border-[#b4e205] transition duration-300 px-[50px] py-[10px] rounded-full flex items-center justify-between gap-5 font-semibold uppercase cursor-pointer"
-      >
-        <span class="text-[50px] text-black">LET'S CUT</span>
-        <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[80px] w-[80px] rounded-full object-contain -mr-[40px]"/>
+      <button
+        class="w-full max-w-full h-[95px] bg-white border-[2.5px] border-black font-semibold text-black text-[55px] uppercase font-built_titling px-[30px] rounded-full flex items-center justify-between gap-[20px] hover:border-white hover:text-white hover:bg-black transition-all duration-300 cursor-pointer group"
+        >
+        <span class="pl-4">Let's Cut</span>
+        <img src="/Assets/svg/arrow.svg" alt="arrow" class="h-[75px] w-auto -mr-[20px] group-hover:hidden" />
+        <img src="/Assets/svg/ArrowW.svg" alt="arrow hover" class="h-[75px] w-auto -mr-[20px] hidden group-hover:inline" />
       </button>
     </div>
 

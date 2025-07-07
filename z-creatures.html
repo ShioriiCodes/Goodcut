@@ -27,11 +27,11 @@
 <body class="overflow-x-hidden">
 
     <!-- Floating Logo (Bottom-Right) -->
-    <div onclick="scrollToTop()" class="fixed bottom-6 left-6 z-50">
+    <div onclick="scrollToTop()" class="fixed bottom-6 right-6 z-50">
       <img
-        src="/Assets/Logo/Z-creatures.png"
-        alt="Floating Logo"
-        class="h-20 w-auto opacity-50 hover:opacity-80 transition-opacity duration-300"
+      src="/Assets/Logo/Z-creatures.png"
+      alt="Floating Logo"
+      class="h-20 w-auto opacity-50 hover:opacity-80 transition-opacity duration-300"
       />
     </div>
 
@@ -107,80 +107,89 @@
         </div>
     </div>
 
-    <nav id="categoryNav" class="fixed top-[160px] left-1/2 transform -translate-x-1/2 z-50 shadow-none px-[60px] py-8 flex gap-5 items-center transition-all duration-300 max-w-[1800px] justify-center w-full">
+    <nav id="categoryNav"
+      class="fixed top-1/2 left-0 transform -translate-y-1/2 z-50 shadow-none px-[36px] py-5 mt-[129px] flex flex-col gap-2 items-center transition-all duration-300 max-h-[100vh] overflow-auto">
       <!-- Category Buttons -->
       <a href="#fire" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/FIRE.png" alt="Fire"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #ff2e63)" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #ff2e63;">Fire</span>
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ff2e63;">Fire</span>
       </a>
       <a href="#water" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/WATER.png" alt="Water"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #00f0ff);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #00f0ff;">Water</span>
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #00f0ff;">Water</span>
       </a>
       <a href="#earth" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/EARTH.png" alt="Earth"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #33ff6e);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #33ff6e;">Earth</span>
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #33ff6e;">Earth</span>
       </a>
       <a href="#air" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/AIR.png" alt="Air"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #e9ff00);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #e9ff00;">Air</span>
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #e9ff00;">Air</span>
       </a>
       <a href="#food" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/FOOD.png" alt="Food"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #ff5ce4);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #ff5ce4;">Food</span>
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ff5ce4;">Food</span>
       </a>
       <a href="#space" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/SPACE.png" alt="Space"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #ff3b3b);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #ff3b3b;">Space</span>
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ff3b3b;">Space</span>
       </a>
       <a href="#underworld" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/UNDERWORLD.png" alt="Underworld"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #4f63ff);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #4f63ff;">Underworld</span>
+        <span class="text-base md:text-[8px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #4f63ff;">Underworld</span>
       </a>
       <a href="#futuristic" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/FUTURISTIC.png" alt="Futuristic"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #9e9e9e);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #9e9e9e;">Futuristic</span>
+        <span class="text-base md:text-[10px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #9e9e9e;">Futuristic</span>
       </a>
       <a href="#abstract" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/ABSTRACT.png" alt="Abstract"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #ffc300);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #ffc300;">Abstract</span>
+        <span class="text-base md:text-[10px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ffc300;">Abstract</span>
       </a>
       <a href="#multiverse" class="group flex flex-col items-center transition hover:scale-110">
         <img src="/Assets/Logo/MULTIVERSE-1@2x.png" alt="Multiverse"
-          class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] transition-transform duration-300"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
           style="filter: drop-shadow(0 0 12px #0ff);" />
-        <span class="text-base md:text-lg text-white font-semibold uppercase mt-3" style="text-shadow: 0 0 6px #0ff;">Multiverse</span>
+        <span class="text-base md:text-[10px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #0ff;">Multiverse</span>
       </a>
     </nav>
 
-    <script>
-      const nav = document.getElementById('categoryNav');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-          nav.classList.replace('top-[160px]', 'top-[10px]');
-        } else {
-          nav.classList.replace('top-[10px]', 'top-[160px]');
-        }
-      });
-    </script>
+  <script>
+    const nav = document.getElementById('categoryNav');
+    let hasMargin = true;
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 20 && hasMargin) {
+        nav.classList.remove('mt-[129px]');
+        nav.classList.add('scale-[1]');
+        hasMargin = false;
+      } else if (scrollTop <= 20 && !hasMargin) {
+        nav.classList.add('mt-[129px]');
+        nav.classList.remove('scale-[1]');
+        hasMargin = true;
+      }
+    });
+  </script>
 
   <!-- HERO SECTION WITH FULL BACKGROUND IMAGE HEIGHT -->
   <section class="relative w-full bg-black text-white">
@@ -639,7 +648,7 @@
           <img src="/Assets/Logo/WATER.png" alt="Fire Logo" class="h-[254px] w-[254px] object-contain mx-auto" />
           <span class="block font-workSans font-light text-[#999999] text-[48px] mb-[-20px] tracking-wide" style="letter-spacing: .45em;">KINGDOM OF</span>
           <span class="block font-built_titling font-semibold text-white text-[200px] leading-none mb-2">Tubbataha</span>
-          <span class="block font-built_titling font-semibold text-white text-[64px] uppercase tracking-wider">type: fire z-creature</span>
+          <span class="block font-built_titling font-semibold text-white text-[64px] uppercase tracking-wider">type: water z-creature</span>
         </div>
       </div>
     </section>
