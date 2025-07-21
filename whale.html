@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GoodCut Studio | Z-Creatures</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Built+Titling&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/node_modules/tailwindcss/tailwind.config.js"></script>
+    <link rel="stylesheet" href="/Assets/css/font.css" />
+    <link href="/Assets/tailwind.css" rel="stylesheet">
+
+      <!-- Favicon Icon -->
+      <link rel="icon" type="image/png" href="/Assets/Logo/logow.png" sizes="16x16" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="/Assets/Logo/logow.png">
+      <link rel="icon" type="image/png" sizes="512x512" href="/Assets/Logo/logow.png">
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Floating Logo (Bottom-Right) -->
+    <div onclick="scrollToTop()" class="fixed bottom-6 right-6 z-50">
+      <img
+      src="/Assets/Logo/Z-creatures.png"
+      alt="Floating Logo"
+      class="h-20 w-auto opacity-50 hover:opacity-80 transition-opacity duration-300"
+      />
+    </div>
+
+      <!-- Header -->
+    <header class="bg-black text-white px-6 md:px-[40px] pt-10 pb-8 mr-[-40px] flex justify-between items-center uppercase tracking-widest">
+      <!-- Logo -->
+      <div class="flex items-center gap-2 ml-2">
+        <a href="/index.html">
+          <img src="/Assets/Logo/logow.png" alt="GoodCut Studio Logo" class="h-auto w-[130px]" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center leading-none px-6 md:px-16 py-4 gap-16">
+        <a href="/index2.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Home</a>
+        <a href="/about.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">About</a>
+        <a href="/work.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Works</a>
+        <a href="/service.html" class="nav-link text-2xl font-built_titling font-semibold hover:underline underline-offset-8 hover:decoration-4 hover:decoration-[#b4e205] transition">Services</a>
+        <!-- Button (Let's Cut) -->
+        <button onclick="openModal()" class="flex items-center gap-2 border-2 border-white px-7 py-1 rounded-full hover:border-[#b4e205] hover:text-[#b4e205] transition leading-none group font-built_titling font-semibold text-2xl tracking-wider">
+          <span class="px-2 mx-auto">Let’s Cut</span>
+          <img src="/Assets/Image/arrow3.png" alt="Arrow" class="h-[36px] w-auto group-hover:hidden mr-[-23px]"/>
+          <img src="/Assets/Image/arrow2.png" alt="Arrow Hover" class="h-[36px] w-auto hidden group-hover:inline mr-[-23px]"/>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center hidden fade-in-start">
+      <div class="relative max-w-[1400px] w-full mx-auto border border-white/40 text-white bg-black/40 px-7 py-[100px]">
+        
+        <!-- Close Button -->
+        <button class="absolute top-0 left-3 text-white text-5xl hover:text-[#b4e205]" onclick="closeModal()">×</button>
+        
+          <!-- Header: Contact Info & Tagline -->
+          <div class="flex justify-between items-start flex-wrap mb-12 pl-12 mt-[-50px]">
+            <div>
+              <h2 class="text-[#b4e205] text-[50px] font-built_titling font-extrabold mb-1">CONTACT US</h2>
+              <p class="text-2xl font-workSans">contact@goodcut.com</p>
+            </div>
+            <div class="text-right">
+              <h3 class="text-4xl font-workSans">Let’s create together.</h3>
+              <p class="text-2xl text-white/70 font-workSans font-normal">Let us know how we can help.</p>
+            </div>
+          </div>
+
+          <!-- Centered Form -->
+          <div class="flex justify-center">
+            <form class="w-full max-w-[700px] space-y-5 text-white text-left">
+              <!-- Name -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Name*</label>
+                <input type="text" placeholder="Your Name" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px] font-bebas_neue" />
+              </div>
+              <!-- Email -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Email*</label>
+                <input type="email" placeholder="Your email address" class="w-full px-4 py-4 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]" />
+              </div>
+              <!-- Message -->
+              <div>
+                <label class="block text-[25px] font-Bebas_Neue font-normal mb-1 uppercase">Your Message*</label>
+                <textarea rows="4" placeholder="Your message" class="w-full px-4 py-2 pb-16 border border-white/20 bg-transparent placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#b4e205] placeholder:text-[20px]"></textarea>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="text-2xl mt-10 flex items-center gap-4 px-7 py-4 bg-white text-black uppercase font-Bebas_Neue font-normal rounded-full hover:bg-[#b4e205] hover:text-black transition duration-300 leading-none group tracking-wider shadow-none border-none">
+                <span class="px-2 mx-auto">Send Message</span>
+                <img src="/Assets/Image/arrow1.png" alt="Arrow" class="h-12 w-auto group-hover:hidden mr-[-20px]" />
+                <img src="/Assets/Image/arrow1.png" alt="Arrow Hover" class="h-12 w-auto hidden group-hover:inline mr-[-20px]" />
+              </button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- <nav id="categoryNav"
+      class="fixed top-1/2 left-0 transform -translate-y-1/2 z-50 shadow-none px-[36px] py-5 mt-[129px] flex flex-col gap-2 items-center transition-all duration-300 max-h-[100vh] overflow-auto">
+      <!-- Category Buttons 
+      <a href="#fire" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/FIRE.png" alt="Fire"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #ff2e63)" />
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ff2e63;">Fire</span>
+      </a>
+      <a href="#water" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/WATER.png" alt="Water"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #00f0ff);" />
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #00f0ff;">Water</span>
+      </a>
+      <a href="#earth" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/EARTH.png" alt="Earth"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #33ff6e);" />
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #33ff6e;">Earth</span>
+      </a>
+      <a href="#air" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/AIR.png" alt="Air"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #e9ff00);" />
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #e9ff00;">Air</span>
+      </a>
+      <a href="#food" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/FOOD.png" alt="Food"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #ff5ce4);" />
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ff5ce4;">Food</span>
+      </a>
+      <a href="#space" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/SPACE.png" alt="Space"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #ff3b3b);" />
+        <span class="text-base md:text-[12px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ff3b3b;">Space</span>
+      </a>
+      <a href="#underworld" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/UNDERWORLD.png" alt="Underworld"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #4f63ff);" />
+        <span class="text-base md:text-[8px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #4f63ff;">Underworld</span>
+      </a>
+      <a href="#futuristic" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/FUTURISTIC.png" alt="Futuristic"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #9e9e9e);" />
+        <span class="text-base md:text-[10px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #9e9e9e;">Futuristic</span>
+      </a>
+      <a href="#abstract" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/ABSTRACT.png" alt="Abstract"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #ffc300);" />
+        <span class="text-base md:text-[10px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #ffc300;">Abstract</span>
+      </a>
+      <a href="#multiverse" class="group flex flex-col items-center transition hover:scale-110">
+        <img src="/Assets/Logo/MULTIVERSE-1@2x.png" alt="Multiverse"
+          class="h-[52px] w-auto md:h-[52px] md:w-auto transition-transform duration-300"
+          style="filter: drop-shadow(0 0 12px #0ff);" />
+        <span class="text-base md:text-[10px] text-white font-semibold uppercase" style="text-shadow: 0 0 6px #0ff;">Multiverse</span>
+      </a>
+    </nav>
+
+  <script>
+    const nav = document.getElementById('categoryNav');
+    let hasMargin = true;
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 20 && hasMargin) {
+        nav.classList.remove('mt-[129px]');
+        nav.classList.add('scale-[1]');
+        hasMargin = false;
+      } else if (scrollTop <= 20 && !hasMargin) {
+        nav.classList.add('mt-[129px]');
+        nav.classList.remove('scale-[1]');
+        hasMargin = true;
+      }
+    });
+  </script> -->
+
+  <!-- HERO SECTION WITH FULL BACKGROUND IMAGE HEIGHT -->
+  <section class="relative w-full bg-black text-white">
+      <!-- Background Image (natural height) -->
+      <img src="/Assets/Image/WWS/3.jpg" alt="Creatures Background" class="w-full h-auto object-cover object-center fade-in-start" />
+      <div class="max-w-[1400px] mx-auto">
+        <!-- Divider -->
+        <div class="w-full h-2 bg-black my-8"></div>
+          <section class="px-4 my-8">
+            <p class="text-lg text-white font-workSans text-center">
+              This poster is part of a featured showcase illustrating a concept with a central heart symbol embedded within a structured grid layout.
+              It sets the thematic tone for the rest of the visual narrative on this page.
+              This poster is part of a featured showcase illustrating a concept with a central heart symbol embedded within a structured grid layout.
+              It sets the thematic tone for the rest of the visual narrative on this page.
+              This poster is part of a featured showcase illustrating a concept with a central heart symbol embedded within a structured grid layout.
+              It sets the thematic tone for the rest of the visual narrative on this page.
+              This poster is part of a featured showcase illustrating a concept with a central heart symbol embedded within a structured grid layout.
+              It sets the thematic tone for the rest of the visual narrative on this page.
+              This poster is part of a featured showcase illustrating a concept with a central heart symbol embedded within a structured grid layout.
+              It sets the thematic tone for the rest of the visual narrative on this page.
+              This poster is part of a featured showcase illustrating a concept with a central heart symbol embedded within a structured grid layout.
+              It sets the thematic tone for the rest of the visual narrative on this page.
+            </p>
+          </section>
+
+      <section class="grid grid-cols-6 gap-2 p-4 relative">
+        <div class="col-span-6 grid grid-cols-5 gap-2">
+          <!-- Repeat this block for each image -->
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300  overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image" class="w-full h-full object-cover">
+          </div>
+          <!-- Add more image blocks as needed -->
+        </div>
+      </section>
+
+      <div class="w-full h-2 bg-white my-8"></div>
+        <!-- Section Title -->
+        <section class="my-12 px-4">
+          <div class="flex items-center gap-4 font-built_titling">
+            <div class="w-8 h-8 bg-black text-white flex text-4xl items-center justify-center rounded-full">1.</div>
+            <h2 class="text-5xl font-bold">Wondering Whale Sharks</h2>
+          </div>
+          <p class="text-gray-500 mt-2 text-2xl font-workSans">Some description text here...</p>
+        </section>
+
+        <!-- First 5-Column Grid Section with GIF/NFT labels replaced by images -->
+        <section class="grid grid-cols-5 gap-4 px-4">
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="GIF" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="NFT" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="NFT" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="NFT" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="NFT" class="w-full h-full object-cover">
+          </div>
+        </section>
+
+        <!-- 10-Column Grid Section replaced with images -->
+        <section class="grid grid-cols-5 gap-2 px-4 my-12">
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 1" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 2" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 3" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 4" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 5" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 6" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 7" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 8" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 9" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-gray-300 overflow-hidden">
+            <img src="https://via.placeholder.com/300?text=NFT" alt="Image 10" class="w-full h-full object-cover">
+          </div>
+        </section>
+
+        <!-- Assets Section -->
+        <section class="px-4 p-6">
+          <h3 class="text-xl font-bold mb-4">ASSET</h3>
+          <div class="grid grid-cols-5 gap-4">
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets/" alt="Asset 1" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 2" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 3" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 4" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 5" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 6" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets/" alt="Asset 2" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 3" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 4" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-square0 flex items-center bg-gray-300 justify-center rounded overflow-hidden">
+                <img src="/Assets/Image/FHC/nft/guy/assets" alt="Asset 5" class="w-full h-full object-cover" />
+              </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Description -->
+        <div class="h-[30vh] bg-black mx-auto  px-4 text-white text-lg leading-relaxed text-center flex flex-col items-center mt-10">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-4 items-center px-2 pb-10 fade-in-start">
+            <div>
+              <a href="https://www.stargaze.zone/m/z-creatures/tokens" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Z-CREATURE.png" alt="Logo 1" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+            <div>
+              <a href="https://x.com/ANYO_nft" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Esoj.png" alt="Logo 2" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.anyo-nft.com/" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Anyo.png" alt="Logo 3" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.stargaze.zone/" target="_blank" rel="noopener">
+              <img src="/Assets/Logo/Stargaze.png" alt="Logo 4" class="mx-auto h-20 w-auto" />
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-between items-center max-w-[1400px] mx-auto fade-in-start">
+            <div class="text-[18px] text-white font-workSans font-light">&copy;2025 ANYO. All Rights Reserved.</div>
+          </div>
+            <div onclick="scrollToTop()" class="mx-auto mt-12 mb-[-50px] text-[#a1a1a1] font-workSans w-auto px-5 h-[50px] rounded-full flex items-center justify-center text-[20px] transition-colors duration-300 cursor-pointer font-built_titling font-normal gap-3 fade-in-start"
+              style="min-width: 140px; max-width: 320px;">
+              <span class="text-[20px] font-semibold font-built_titling leading-none mb-[-85px]">↑</span>
+              <span class="text-[20px] font-semibold tracking-wide mt-[6px] mb-[-85px]">Back to Top</span>
+            </div>
+        </div>
+          <div class="w-full max-w-[1400px] border-t border-[#333] mx-auto pb-5"></div>
+    </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-black text-white py-6">
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto mb-[-10px]">
+      <div class="flex items-center pt-2">
+        <img src="/Assets/Logo/GOODCUT_1.png" alt="GoodCut Studio Logo" class="h-[30px] w-auto" />
+        <span class="text-[29px] font-semibold font-built_titling ml-2">GOODCUT STUDIO</span>
+      </div>
+      <div class="flex-grow text-right text-[20px] font-workSans font-normal text-white/70">
+        Quezon | Puerto Princesa, Palawan Philippines
+      </div>
+    </div>
+
+    <!-- Border Line -->
+    <div class="w-full max-w-[1400px] border-t border-[#333] mt-2 mx-auto"></div>
+
+    <div class="flex justify-between items-center max-w-[1400px] mx-auto">
+      <div class="py-2 text-[20px] text-white/80 font-workSans font-semibold">&copy;2025</div>
+      <div>
+        <a href="#" class="text-white/50 text-[18px] uppercase font-workSans font-normal hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/Assets/script/script.js"></script>
+
+</body>
+</html>
